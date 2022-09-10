@@ -1,0 +1,11 @@
+[ERROR:flutter/runtime/dart_vm_initializer.cc(41)] Unhandled Exception: type 'Null' is not a subtype of type 'String'
+E/flutter ( 5419): #0      CategoryNewsClass.getNews.<anonymous closure>
+package:app/newswidgets/news.dart:56
+E/flutter ( 5419): #1      List.forEach (dart:core-patch/growable_array.dart:416:8)
+E/flutter ( 5419): #2      CategoryNewsClass.getNews
+package:app/newswidgets/news.dart:49
+E/flutter ( 5419): <asynchronous suspension>
+E/flutter ( 5419): #3      _CategoryNewsState.getCategoryNews
+package:app/newswidgets/category_news.dart:27
+E/flutter ( 5419): <asynchronous suspension>
+E/flutter ( 5419):
