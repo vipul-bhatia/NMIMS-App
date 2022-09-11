@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import '../pages/academics.dart';
@@ -5,15 +6,13 @@ import '../pages/campus.dart';
 import '../pages/mess.dart';
 import '../pages/hostel.dart';
 import 'package:url_launcher/url_launcher.dart';
-class HomeScreen extends StatefulWidget {
 
+class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
-  
   void contactsScreen(BuildContext context) {
     Navigator.of(context).pushNamed('/contacts');
   }
@@ -70,7 +69,6 @@ class _HomeScreenState extends State<HomeScreen> {
     Navigator.of(context).pushNamed('/theatre');
   }
 
-
   int _selectedIndex = 0;
   final List<Map<String, dynamic>> _widgetOptions = [
     {'Pages': CampusScreen(), 'title': 'NMIMS Shirpur'},
@@ -88,8 +86,12 @@ class _HomeScreenState extends State<HomeScreen> {
 //Emergency call button
           TextButton(
             onPressed: () {
-              launch("+919820000000");
-            }, child: Text('Emergency', style: TextStyle(color: Colors.redAccent),),
+              launch("tel: +919820000000");
+            },
+            child: Text(
+              'Emergency',
+              style: TextStyle(color: Colors.redAccent),
+            ),
           ),
         ],
         title: Text(_widgetOptions[_selectedIndex]['title']),
@@ -151,7 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 eventsScreen(context);
               },
             ),
-             ListTile(
+            ListTile(
               leading: Icon(Icons.movie),
               title: Text('Theatre'),
               onTap: () {
@@ -198,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.grey,
                   )),
             ),
-             ListTile(
+            ListTile(
               leading: Icon(Icons.newspaper),
               title: Text('News'),
               onTap: (() => newsScreen(context)),

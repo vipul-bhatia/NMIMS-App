@@ -20,17 +20,29 @@ Future<List<facultyDetail>> facultyDetails() async {
     faculties.forEach((element) {
       String Title = element['Title'];
       String details = element['details'];
-      String id = element['id'];
       String ImageUrl = element['ImageUrl'];
       String profileImage = element['profileImage'];
       String number = element['number'];
+      String sittingP = element['sittingP'];
+      String linkedin = element['linkedin'];
+      String email = element['email'];
+      String twitter = element['twitter'];
+      String phone = element['phone'];
+      String about = element['about'];
+      String qualifications = element['qualifications'];
       facultydetails.add(facultyDetail(
           Title: Title,
           details: details,
-          id: id,
           ImageUrl: ImageUrl,
           profileImage: profileImage,
-          number: number));
+          number: number,
+          sittingP: sittingP,
+          linkedin: linkedin,
+          email: email,
+          twitter: twitter,
+          phone: phone,
+          about: about,
+          qualifications: qualifications));
     });
     return facultydetails;
   } else {

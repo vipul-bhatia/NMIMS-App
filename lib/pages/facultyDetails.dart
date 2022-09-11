@@ -1,6 +1,7 @@
 import 'package:app/models/faculty.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../pages/faculty.dart';
 
 class facultyDetailsScreen extends StatelessWidget {
@@ -76,7 +77,7 @@ class facultyDetailsScreen extends StatelessWidget {
               elevation: 20.0,
               shadowColor: Colors.blue,
               child: Text(
-                'B- Wing 2nd Floor',
+                fd.sittingP,
                 style: TextStyle(
                   fontSize: 20,
                 ),
@@ -95,7 +96,7 @@ class facultyDetailsScreen extends StatelessWidget {
                     clipBehavior: Clip.hardEdge,
                     color: Colors.transparent,
                     child: InkWell(
-                        onTap: (() {}),
+                        onTap: () => launch(fd.linkedin),
                         child: Center(
                           child: Icon(
                             FontAwesomeIcons.linkedin,
@@ -114,7 +115,7 @@ class facultyDetailsScreen extends StatelessWidget {
                     clipBehavior: Clip.hardEdge,
                     color: Colors.transparent,
                     child: InkWell(
-                        onTap: (() {}),
+                        onTap: () => launch(fd.email),
                         child: Center(
                           child: Icon(
                             Icons.email,
@@ -133,7 +134,7 @@ class facultyDetailsScreen extends StatelessWidget {
                     clipBehavior: Clip.hardEdge,
                     color: Colors.transparent,
                     child: InkWell(
-                        onTap: (() {}),
+                        onTap: () => launch(fd.twitter),
                         child: Center(
                           child: Icon(
                             FontAwesomeIcons.twitter,
@@ -152,7 +153,7 @@ class facultyDetailsScreen extends StatelessWidget {
                     clipBehavior: Clip.hardEdge,
                     color: Colors.transparent,
                     child: InkWell(
-                        onTap: (() {}),
+                        onTap: () => launch("tel: fd.phone"),
                         child: Center(
                           child: Icon(
                             FontAwesomeIcons.phone,
@@ -182,7 +183,7 @@ class facultyDetailsScreen extends StatelessWidget {
                       height: 16,
                     ),
                     Text(
-                      ''' He is a developer and a good student He is a developer and a good student He is a developer and a good student''',
+                      fd.about,
                       style: TextStyle(),
                     )
                   ],
@@ -208,7 +209,7 @@ class facultyDetailsScreen extends StatelessWidget {
                       height: 16,
                     ),
                     Text(
-                      ''' He is a developer and a good student He is a developer and a good student He is a developer and a good student''',
+                      fd.qualifications,
                       style: TextStyle(),
                     )
                   ],
