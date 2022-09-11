@@ -115,7 +115,7 @@ class facultyDetailsScreen extends StatelessWidget {
                     clipBehavior: Clip.hardEdge,
                     color: Colors.transparent,
                     child: InkWell(
-                        onTap: () => launch(fd.email),
+                        onTap: () => launch('mailto: fd.email'),
                         child: Center(
                           child: Icon(
                             Icons.email,

@@ -7,7 +7,7 @@ import '../models/messmeals.dart';
 
 Future<List<MealType>> fatchMenu() async {
   final response = await http.get(Uri.parse(
-      'https://raw.githubusercontent.com/Vipul0592bhatia/messmenu/main/messmenu'));
+      'https://raw.githubusercontent.com/Vipul0592bhatia/nmimsdata/master/datafiles/messmenu.json'));
 
   List<MealType> mealtypes = [];
 

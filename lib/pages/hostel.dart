@@ -8,7 +8,7 @@ import '../models/hostel.dart';
 
 Future<List<HostelType>> fatchMenu() async {
   final response = await http.get(Uri.parse(
-      'https://raw.githubusercontent.com/Vipul0592bhatia/hostel/main/hostelFile'));
+      'https://raw.githubusercontent.com/Vipul0592bhatia/nmimsdata/master/datafiles/hostel.json'));
 
   List<HostelType> hosteltypes = [];
 

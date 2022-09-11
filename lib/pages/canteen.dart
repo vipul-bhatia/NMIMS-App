@@ -12,7 +12,7 @@ class canteenScreen extends StatefulWidget {
 
 Future<List<CanteenMealType>> CanteenMenu() async {
   final response = await http.get(Uri.parse(
-      'https://raw.githubusercontent.com/Vipul0592bhatia/canteenmenu/main/canteenmenu'));
+      'https://raw.githubusercontent.com/Vipul0592bhatia/nmimsdata/master/datafiles/canteenmenu.json'));
 
   List<CanteenMealType> mealtypes = [];
 

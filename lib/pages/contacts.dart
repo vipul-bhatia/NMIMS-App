@@ -6,7 +6,7 @@ import '../models/contacts.dart';
 
 Future<List<ListType>> fatchcallnumber() async {
   final response = await http.get(Uri.parse(
-      'https://raw.githubusercontent.com/Vipul0592bhatia/contacts/main/contacts%20screen'));
+      'https://raw.githubusercontent.com/Vipul0592bhatia/nmimsdata/master/datafiles/contacts.json'));
 
   List<ListType> listtypes = [];
 

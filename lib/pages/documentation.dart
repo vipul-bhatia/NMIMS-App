@@ -8,7 +8,7 @@ import '../models/documents.dart';
 
 Future<List<documentType>> fatchDocument() async {
   final response = await http.get(Uri.parse(
-      'https://raw.githubusercontent.com/Vipul0592bhatia/documents/main/documents%20screen'));
+      'https://raw.githubusercontent.com/Vipul0592bhatia/nmimsdata/master/datafiles/documents.json'));
 
   List<documentType> documenttypes = [];
 
