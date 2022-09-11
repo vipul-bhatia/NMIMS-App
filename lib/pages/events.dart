@@ -8,7 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 Future<List<eventDetail>> eventsDetails() async {
   final response = await http.get(Uri.parse(
-      'https://raw.githubusercontent.com/Vipul0592bhatia/Events/main/Events'));
+      'https://raw.githubusercontent.com/Vipul0592bhatia/nmimsdata/master/datafiles/events.json'));
 
   String title = "Events";
   if (response.statusCode == 200) {

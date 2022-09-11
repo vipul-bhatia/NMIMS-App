@@ -9,8 +9,7 @@ import '../pages/facultyDetails.dart';
 
 Future<List<facultyDetail>> facultyDetails() async {
   final response = await http.get(Uri.parse(
-      'https://raw.githubusercontent.com/Vipul0592bhatia/faculty/main/faculty%20screen'));
-
+      'https://raw.githubusercontent.com/Vipul0592bhatia/nmimsdata/master/datafiles/faculties.json'));
   String title = "Faculty";
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -23,12 +22,14 @@ Future<List<facultyDetail>> facultyDetails() async {
       String details = element['details'];
       String id = element['id'];
       String ImageUrl = element['ImageUrl'];
+      String profileImage = element['profileImage'];
       String number = element['number'];
       facultydetails.add(facultyDetail(
           Title: Title,
           details: details,
           id: id,
           ImageUrl: ImageUrl,
+          profileImage: profileImage,
           number: number));
     });
     return facultydetails;
@@ -54,7 +55,6 @@ class _facultyScreenState extends State<facultyScreen> {
 
 
  void selectFaculty(BuildContext ctx, facultyDetail fd) {
-    print(fd.id);
     Navigator.of(ctx).pushNamed(
       facultyDetailsScreen.routeName,
       arguments: fd,

@@ -17,6 +17,7 @@ class facultyDetail {
   final String details;
   final String id;
   final String ImageUrl; 
+  final String profileImage;
   final String number;
 
   const facultyDetail({
@@ -25,6 +26,7 @@ class facultyDetail {
     required this.details,
     required this.id,
     required this.ImageUrl,
+    required this.profileImage,
     required this.number,
   });
 }
