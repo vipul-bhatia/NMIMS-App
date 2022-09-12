@@ -94,7 +94,7 @@ class _galleryScreenState extends State<galleryScreen> {
           }
 
           // By default, show a loading spinner.
-          return const CircularProgressIndicator();
+          return Center(child: const CircularProgressIndicator());
         },
       ),
     );
