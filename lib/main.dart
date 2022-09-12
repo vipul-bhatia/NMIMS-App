@@ -20,6 +20,7 @@ import '../pages/academicsImformation.dart';
 import '../pages/splashPage.dart';
 import '../pages/theatre.dart';
 import '../pages/facultyDetails.dart';
+import '../pages/gallerydetails.dart';
 
 
 
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
         '/theatre':(context) => theatreScreen(),
          CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
           facultyDetailsScreen.routeName: (ctx) => facultyDetailsScreen(),
+          galleryDetailsScreen.routeName: (ctx) => galleryDetailsScreen(),
       },
     );
   }
