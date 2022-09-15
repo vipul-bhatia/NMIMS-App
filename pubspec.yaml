@@ -81,6 +81,7 @@ flutter:
      -  Assets/campus-1.jpg
      -  Assets/UnderC.jpg
      -  Assets/CampusCompanion.png
+     -  Assets/nointernet.jpg
 
   #fonts:
    # - family: Mulish

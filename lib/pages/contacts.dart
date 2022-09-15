@@ -106,7 +106,9 @@ Future<List<ListType>> fatchcallnumber() async {
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
-    throw Exception('Failed to load album');
+    throw  Center(
+            child: Image.asset("Assets/nointernet.jpg")
+          );
   }
   return listtypes;
 }
@@ -360,7 +362,9 @@ class _ContactScreenState extends State<ContactScreen> {
               ),
             );
           } else if (snapshot.hasError) {
-            return Text("${snapshot.error}");
+            return  Center(
+            child: Image.asset("Assets/nointernet.jpg")
+          );
           }
           return Center(child: CircularProgressIndicator());
         },

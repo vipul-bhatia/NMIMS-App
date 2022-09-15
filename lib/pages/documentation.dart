@@ -61,7 +61,9 @@ Future<List<documentType>> fatchDocument() async {
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
-    throw Exception('Failed to load album');
+    throw  Center(
+            child: Image.asset("Assets/nointernet.jpg")
+          );
   }
   return documenttypes;
 }
@@ -177,7 +179,9 @@ class _documentScreenState extends State<documentScreen> {
                 ),
               );
             } else if (snapshot.hasError) {
-              return Text("${snapshot.error}");
+              return  Center(
+            child: Image.asset("Assets/nointernet.jpg")
+          );
             }
             return Center(child: CircularProgressIndicator());
           }),

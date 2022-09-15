@@ -50,7 +50,9 @@ Future<List<MealType>> fatchMenu() async {
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
-    throw Exception('Failed to load album');
+    throw  Center(
+            child: Image.asset("Assets/nointernet.jpg")
+          );
   }
 }
 
@@ -184,7 +186,9 @@ class _messScreenState extends State<messScreen> {
                 ),
               );
             } else if (snapshot.hasError) {
-              return Text('${snapshot.error}');
+              return  Center(
+            child: Image.asset("Assets/nointernet.jpg")
+          );
             }
             // By default, show a loading spinner.
             return const CircularProgressIndicator();
