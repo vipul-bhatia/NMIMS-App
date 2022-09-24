@@ -86,7 +86,26 @@ class _HomeScreenState extends State<HomeScreen> {
 //Emergency call button
           TextButton(
             onPressed: () {
-              launch("tel: +919820000000");
+              //launch("tel: +919820000000");
+              showDialog(context: context, builder: (context) => AlertDialog(
+                title: Text('Emergency'),
+                content: Text('Are you sure you want to call the emergency number for help?'),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('No'),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      launch("tel: +919820000000");
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('Yes'),
+                  ),
+                ],
+              ));
             },
             child: Text(
               'Emergency',
