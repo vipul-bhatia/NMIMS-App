@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import '../models/faculty.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../pages/facultyDetails.dart';
@@ -133,7 +134,7 @@ class _facultyScreenState extends State<facultyScreen> {
           );
           }
           // By default, show a loading spinner.
-          return Center(child: CircularProgressIndicator());
+          return Center(child: LoadingAnimationWidget.threeRotatingDots(color: Colors.white, size: 50),);
         },
       ),
     );

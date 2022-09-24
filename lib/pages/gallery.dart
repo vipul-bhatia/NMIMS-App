@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import '../pages/gallerydetails.dart';
 
 Future<List<galleryData>> galleryDatas() async {
@@ -98,7 +99,7 @@ class _galleryScreenState extends State<galleryScreen> {
           }
 
           // By default, show a loading spinner.
-          return Center(child: const CircularProgressIndicator());
+          return Center(child: LoadingAnimationWidget.threeRotatingDots(color: Colors.white, size: 50),);
         },
       ),
     );

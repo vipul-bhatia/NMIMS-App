@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'dart:convert';
 import '../models/hostel.dart';
 
@@ -231,7 +232,7 @@ class _hostelScreenState extends State<hostelScreen> {
             child: Image.asset("Assets/nointernet.jpg")
           );
           }
-          return const CircularProgressIndicator();
+          return LoadingAnimationWidget.threeRotatingDots(color: Colors.white, size: 50);
         },
       ),
     );

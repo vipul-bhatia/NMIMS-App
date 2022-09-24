@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/canteenmeals.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class canteenScreen extends StatefulWidget {
   @override
@@ -433,8 +434,7 @@ class _canteenScreenState extends State<canteenScreen> {
           }
           // By default, show a loading spinner.
           return Center(
-            child: CircularProgressIndicator(
-              ),
+            child: LoadingAnimationWidget.threeRotatingDots(color: Colors.white, size: 50),
           );
         },
       ),

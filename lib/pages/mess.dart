@@ -2,6 +2,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'dart:convert';
 import '../models/messmeals.dart';
 
@@ -191,7 +192,7 @@ class _messScreenState extends State<messScreen> {
           );
             }
             // By default, show a loading spinner.
-            return const CircularProgressIndicator();
+            return LoadingAnimationWidget.threeRotatingDots(color: Colors.white, size: 50);
           }),
     );
   }

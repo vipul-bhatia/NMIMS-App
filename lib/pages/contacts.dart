@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -366,7 +367,7 @@ class _ContactScreenState extends State<ContactScreen> {
             child: Image.asset("Assets/nointernet.jpg")
           );
           }
-          return Center(child: CircularProgressIndicator());
+          return Center(child: LoadingAnimationWidget.threeRotatingDots(color: Colors.white, size: 50),);
         },
       ),
     );
