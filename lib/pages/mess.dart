@@ -51,9 +51,7 @@ Future<List<MealType>> fatchMenu() async {
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
-    throw  Center(
-            child: Image.asset("Assets/nointernet.jpg")
-          );
+    throw Center(child: Image.asset("Assets/nointernet.jpg"));
   }
 }
 
@@ -81,16 +79,31 @@ class _messScreenState extends State<messScreen> {
             if (snapshot.hasData) {
               return Scaffold(
                 appBar: AppBar(
+                  backgroundColor: Colors.white,
+                  elevation: 0,
                   bottom: PreferredSize(
                     preferredSize: Size.fromHeight(20),
-                    child: TabBar(padding: EdgeInsets.all(0),
+                    child: TabBar(
+                        padding: EdgeInsets.all(0),
                         //isScrollable: true,
                         tabs: [
                           Tab(
-                              icon: Icon(Icons.breakfast_dining),
-                              text: 'Breakfast'),
-                          Tab(icon: Icon(Icons.lunch_dining), text: 'Lunch'),
-                          Tab(icon: Icon(Icons.dinner_dining), text: 'Dinner'),
+                              icon: Icon(Icons.breakfast_dining,color:Color(0xFF4B39EF) ,),
+                              child: Text(
+                                "Breakfast",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black),
+                              )),
+                          Tab(icon: Icon(Icons.lunch_dining,color:Color(0xFF4B39EF)),child: Text(
+                                "Lunch",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black),
+                              )),
+                          Tab(icon: Icon(Icons.dinner_dining,color:Color(0xFF4B39EF)), child: Text(
+                                "Dinner",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black),
+                              )),
                         ]),
                   ),
                 ),
@@ -115,9 +128,10 @@ class _messScreenState extends State<messScreen> {
                                   horizontal: 10,
                                 ),
                                 child: ListTile(
-                                  title: Text(snapshot.data![0].meals[index].title),
-                                  subtitle: Text(
-                                      snapshot.data![0].meals[index].Description),
+                                  title: Text(
+                                      snapshot.data![0].meals[index].title),
+                                  subtitle: Text(snapshot
+                                      .data![0].meals[index].Description),
                                 ),
                               ),
                             ),
@@ -144,9 +158,10 @@ class _messScreenState extends State<messScreen> {
                                   horizontal: 10,
                                 ),
                                 child: ListTile(
-                                  title: Text(snapshot.data![1].meals[index].title),
-                                  subtitle: Text(
-                                      snapshot.data![1].meals[index].Description),
+                                  title: Text(
+                                      snapshot.data![1].meals[index].title),
+                                  subtitle: Text(snapshot
+                                      .data![1].meals[index].Description),
                                 ),
                               ),
                             ),
@@ -173,9 +188,10 @@ class _messScreenState extends State<messScreen> {
                                   horizontal: 10,
                                 ),
                                 child: ListTile(
-                                  title: Text(snapshot.data![2].meals[index].title),
-                                  subtitle: Text(
-                                      snapshot.data![2].meals[index].Description),
+                                  title: Text(
+                                      snapshot.data![2].meals[index].title),
+                                  subtitle: Text(snapshot
+                                      .data![2].meals[index].Description),
                                 ),
                               ),
                             ),
@@ -187,12 +203,11 @@ class _messScreenState extends State<messScreen> {
                 ),
               );
             } else if (snapshot.hasError) {
-              return  Center(
-            child: Image.asset("Assets/nointernet.jpg")
-          );
+              return Center(child: Image.asset("Assets/nointernet.jpg"));
             }
             // By default, show a loading spinner.
-            return LoadingAnimationWidget.threeRotatingDots(color: Colors.white, size: 50);
+            return LoadingAnimationWidget.threeRotatingDots(
+                color: Color(0xFF4B39EF), size: 50);
           }),
     );
   }

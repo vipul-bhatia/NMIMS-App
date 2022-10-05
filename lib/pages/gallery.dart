@@ -58,9 +58,20 @@ class _galleryScreenState extends State<galleryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Gallery'),
-        centerTitle: true,
-      ),
+  backgroundColor: Colors.white,
+  title: Text(
+    'Gallery',
+    style: TextStyle(
+          fontFamily: 'Lexend Deca',
+          color: Colors.black,
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+        ),
+  ),
+  actions: [],
+
+  elevation: 0,
+),
       body: FutureBuilder<List<galleryData>>(
         future: galleryDatas(),
         builder: (context, snapshot) {
@@ -75,6 +86,7 @@ class _galleryScreenState extends State<galleryScreen> {
               itemCount: data!.length,
               itemBuilder: (BuildContext context, int index) {
                 return Card(
+                  color: Colors.white,
                   margin: EdgeInsets.zero,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
@@ -99,7 +111,7 @@ class _galleryScreenState extends State<galleryScreen> {
           }
 
           // By default, show a loading spinner.
-          return Center(child: LoadingAnimationWidget.threeRotatingDots(color: Colors.white, size: 50),);
+          return Center(child: LoadingAnimationWidget.threeRotatingDots(color: Color(0xFF4B39EF), size: 50),);
         },
       ),
     );

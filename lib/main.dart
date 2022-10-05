@@ -7,7 +7,6 @@ import '../pages/feedback.dart';
 import '../pages/gallery.dart';
 import '../pages/about.dart';
 import '../pages/canteen.dart';
-import '../screens/onboarding.dart';
 import '../pages/generalStore.dart';
 import '../pages/academics.dart';
 import '../pages/hostel.dart';
@@ -21,6 +20,8 @@ import '../pages/splashPage.dart';
 import '../pages/theatre.dart';
 import '../pages/facultyDetails.dart';
 import '../pages/gallerydetails.dart';
+import '../pages/eventsDetails.dart';
+import 'pages/onboardingnew.dart';
 
 
 
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => splashPage(),
+        '/': (context) => OnboardingScreenWidget(),
         '/home': (context) => HomeScreen(),
         '/contacts': (context) =>  ContactScreen(),
         '/links': (context) =>  linksScreen(),
@@ -56,6 +57,7 @@ class MyApp extends StatelessWidget {
          CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
           facultyDetailsScreen.routeName: (ctx) => facultyDetailsScreen(),
           galleryDetailsScreen.routeName: (ctx) => galleryDetailsScreen(),
+          EventdetailsWidget.routeName: (ctx) => EventdetailsWidget(),
       },
     );
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import '../screens/onboarding.dart';
+import 'onboardingnew.dart';
 
 class splashPage extends StatefulWidget {
   @override
@@ -13,11 +13,11 @@ class _splashPageState extends State<splashPage> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 2),
+    Timer(Duration(seconds: 1),
           ()=>Navigator.pushReplacement(context,
                                         MaterialPageRoute(builder:
                                                           (context) => 
-                                                          OnboardingScreen()
+                                                          OnboardingScreenWidget()
                                                          )
                                        )
          );

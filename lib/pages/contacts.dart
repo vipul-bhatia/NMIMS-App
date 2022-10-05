@@ -367,7 +367,7 @@ class _ContactScreenState extends State<ContactScreen> {
             child: Image.asset("Assets/nointernet.jpg")
           );
           }
-          return Center(child: LoadingAnimationWidget.threeRotatingDots(color: Colors.white, size: 50),);
+          return Center(child: LoadingAnimationWidget.threeRotatingDots(color: Color(0xFF4B39EF), size: 50),);
         },
       ),
     );

@@ -6,10 +6,21 @@ class theatreScreen extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Theatre'),
-        centerTitle: true,
-      ),
+      appBar:  AppBar(
+  backgroundColor: Colors.white,
+  title: Text(
+    'Theatre',
+    style: TextStyle(
+          fontFamily: 'Lexend Deca',
+          color: Colors.black,
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+        ),
+  ),
+  actions: [],
+
+  elevation: 0,
+),
       body: Center(
         child: Image.asset('Assets/UnderC.jpg'),
       ),

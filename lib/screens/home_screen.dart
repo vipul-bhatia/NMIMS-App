@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import '../pages/academics.dart';
@@ -82,40 +81,80 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        iconTheme: IconThemeData(color: Color(0xFF4B39EF)),
         actions: [
-//Emergency call button
-          TextButton(
+          IconButton(
+            iconSize: 30,
+            icon: Icon(Icons.warning),
             onPressed: () {
-              //launch("tel: +919820000000");
-              showDialog(context: context, builder: (context) => AlertDialog(
-                title: Text('Emergency'),
-                content: Text('Are you sure you want to call the emergency number for help?'),
-                actions: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text('No'),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      launch("tel: +919820000000");
-                      Navigator.of(context).pop();
-                    },
-                    child: Text('Yes'),
-                  ),
-                ],
-              ));
+              showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                        title: Text('Emergency'),
+                        content: Text(
+                            'Are you sur you want to call the emergency number for help ?'),
+                            actions: [
+                              TextButton(
+                                child: Text('Yes'),
+                                onPressed: () {
+                                  launch("tel://+919820000000");
+                                },
+                              ),
+                              TextButton(
+                                child: Text('No'),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                            ],
+                      ));
             },
-            child: Text(
-              'Emergency',
-              style: TextStyle(color: Colors.redAccent),
-            ),
           ),
         ],
-        title: Text(_widgetOptions[_selectedIndex]['title']),
+//Emergency call button
+        // TextButton(
+        //   onPressed: () {
+        //     //launch("tel: +919820000000");
+        //     showDialog(context: context, builder: (context) => AlertDialog(
+        //       title: Text('Emergency'),
+        //       content: Text('Are you sure you want to call the emergency number for help?'),
+        //       actions: [
+        //         TextButton(
+        //           onPressed: () {
+        //             Navigator.of(context).pop();
+        //           },
+        //           child: Text('No'),
+        //         ),
+        //         TextButton(
+        //           onPressed: () {
+        //             launch("tel: +919820000000");
+        //             Navigator.of(context).pop();
+        //           },
+        //           child: Text('Yes'),
+        //         ),
+        //       ],
+        //     ));
+        //   },
+        //   child: Text(
+        //     'Emergency',
+        //     style: TextStyle(color: Colors.redAccent),
+        //   ),
+        // ),
+
+        title: Text(
+          _widgetOptions[_selectedIndex]['title'],
+          style: TextStyle(
+            fontFamily: 'Lexend Deca',
+            color: Colors.black,
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       drawer: Drawer(
+        shadowColor: Color(0xFF4B39EF),
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
@@ -146,35 +185,60 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.all(10),
               child: Text("CAMPUS",
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Colors.grey,
+                    color: Colors.black,
                   )),
             ),
             ListTile(
-              leading: Icon(Icons.food_bank_outlined),
-              title: Text('Canteen'),
+              leading: Icon(Icons.food_bank_outlined, color: Color(0xFF4B39EF)),
+              title: Text(
+                'Canteen',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
               onTap: () {
                 canteenScreen(context);
               },
             ),
             ListTile(
-              leading: Icon(Icons.photo_library_outlined),
-              title: Text('Gallery'),
+              leading: Icon(
+                Icons.photo_library_outlined,
+                color: Color(0xFF4B39EF),
+              ),
+              title: Text(
+                'Gallery',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
               onTap: () {
                 galleryScreen(context);
               },
             ),
             ListTile(
-              leading: Icon(Icons.celebration),
-              title: Text('Events'),
+              leading: Icon(
+                Icons.celebration,
+                color: Color(0xFF4B39EF),
+              ),
+              title: Text(
+                'Events',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
               onTap: () {
                 eventsScreen(context);
               },
             ),
             ListTile(
-              leading: Icon(Icons.movie),
-              title: Text('Theatre'),
+              leading: Icon(
+                Icons.movie,
+                color: Color(0xFF4B39EF),
+              ),
+              title: Text(
+                'Theatre',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
               onTap: () {
                 theatreScreen(context);
               },
@@ -184,29 +248,57 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.all(10),
               child: Text("OFFICE",
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Colors.grey,
+                    color: Colors.black,
                   )),
             ),
             ListTile(
-              leading: Icon(Icons.person_outlined),
-              title: Text('Contacts'),
+              leading: Icon(
+                Icons.person_outlined,
+                color: Color(0xFF4B39EF),
+              ),
+              title: Text(
+                'Contacts',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
               onTap: (() => contactsScreen(context)),
             ),
-            ListTile(
-              leading: Icon(Icons.link),
-              title: Text('Links'),
-              onTap: (() => linksScreen(context)),
+             ListTile(
+              leading: Icon(
+                Icons.newspaper,
+                color: Color(0xFF4B39EF),
+              ),
+              title: Text(
+                'News',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
+              onTap: (() => newsScreen(context)),
             ),
+            // ListTile(
+            //   leading: Icon(
+            //     Icons.link,
+            //     color: Color(0xFF4B39EF),
+            //   ),
+            //   title: Text(
+            //     'Links',
+            //     style:
+            //         TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            //   ),
+            //   onTap: (() => linksScreen(context)),
+            // ),
             ListTile(
-              leading: Icon(Icons.document_scanner_outlined),
-              title: Text('Documents Required'),
-              onTap: (() => documentsScreen(context)),
-            ),
-            ListTile(
-              leading: Icon(Icons.work),
-              title: Text('Faculty'),
+              leading: Icon(
+                Icons.work,
+                color: Color(0xFF4B39EF),
+              ),
+              title: Text(
+                'Faculty',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
               onTap: (() => facultyScreen(context)),
             ),
             Divider(),
@@ -214,29 +306,57 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.all(10),
               child: Text("OTHER",
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Colors.grey,
+                    color: Colors.black,
                   )),
             ),
+            // ListTile(
+            //   leading: Icon(
+            //     Icons.newspaper,
+            //     color: Color(0xFF4B39EF),
+            //   ),
+            //   title: Text(
+            //     'News',
+            //     style:
+            //         TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            //   ),
+            //   onTap: (() => newsScreen(context)),
+            // ),
             ListTile(
-              leading: Icon(Icons.newspaper),
-              title: Text('News'),
-              onTap: (() => newsScreen(context)),
-            ),
-            ListTile(
-              leading: Icon(Icons.feedback_outlined),
-              title: Text('Feedback'),
+              leading: Icon(
+                Icons.feedback_outlined,
+                color: Color(0xFF4B39EF),
+              ),
+              title: Text(
+                'Feedback',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
               onTap: (() => feedbackScreen(context)),
             ),
             ListTile(
-              leading: Icon(Icons.people),
-              title: Text('About Us'),
+              leading: Icon(
+                Icons.people,
+                color: Color(0xFF4B39EF),
+              ),
+              title: Text(
+                'About Us',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
               onTap: (() => aboutScreen(context)),
             ),
             ListTile(
-              leading: Icon(Icons.exit_to_app_outlined),
-              title: Text('Exit'),
+              leading: Icon(
+                Icons.exit_to_app_outlined,
+                color: Color(0xFF4B39EF),
+              ),
+              title: Text(
+                'Exit',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
               onTap: () {
                 Navigator.of(context).pop();
               },
@@ -273,10 +393,10 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
             child: GNav(
-              rippleColor: Colors.grey[300]!,
-              hoverColor: Colors.grey[100]!,
+              rippleColor: Color(0xFF4B39EF),
+              hoverColor: Color(0xFF4B39EF),
               gap: 8,
-              activeColor: Colors.black,
+              activeColor: Color(0xFF4B39EF),
               iconSize: 24,
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
               duration: const Duration(milliseconds: 400),
@@ -284,20 +404,20 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.black,
               tabs: [
                 GButton(
-                  icon: Icons.home_outlined,
-                  text: 'Campus',
+                  icon: Icons.home_outlined ,iconColor: Colors.black,
+                  text: 'Campus',textColor: Colors.black,
                 ),
                 GButton(
-                  icon: Icons.book_outlined,
-                  text: 'Academics',
+                  icon: Icons.book_outlined,iconColor: Colors.black,
+                  text: 'Academics',textColor: Colors.black,
                 ),
                 GButton(
-                  icon: Icons.bed_outlined,
-                  text: 'Hostel',
+                  icon: Icons.bed_outlined,iconColor: Colors.black,
+                  text: 'Hostel',textColor: Colors.black,
                 ),
                 GButton(
-                  icon: Icons.food_bank_outlined,
-                  text: 'Mess Menu',
+                  icon: Icons.food_bank_outlined,iconColor: Colors.black,
+                  text: 'Mess Menu',textColor: Colors.black,
                 ),
               ],
               selectedIndex: _selectedIndex,

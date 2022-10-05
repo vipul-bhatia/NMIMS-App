@@ -48,6 +48,8 @@ dependencies:
   gallery_saver: ^2.3.2
   loading_animation_widget: ^1.2.0+3
   google_fonts: ^3.0.1
+  smooth_page_indicator: ^1.0.0+2
+  mdi: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -86,6 +88,9 @@ flutter:
      -  Assets/UnderC.jpg
      -  Assets/CampusCompanion.png
      -  Assets/nointernet.jpg
+     -  Assets/login1.png
+     -  Assets/login2.jpg
+     -  Assets/login3.png
 
   #fonts:
    # - family: Mulish

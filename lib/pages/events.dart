@@ -1,3 +1,4 @@
+import 'package:app/pages/eventsDetails.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
@@ -48,22 +49,37 @@ class _eventsScreenState extends State<eventsScreen> {
     futureMenu = eventsDetails();
   }
 
+   void selectEvent(BuildContext ctx, eventDetail ed) {
+    Navigator.of(ctx).pushNamed(
+      EventdetailsWidget.routeName,
+      arguments: ed,
+    );
+    // Navigator.of(ctx).pushNamed(
+    //   CategoryMealsScreen.routeName,
+    //   arguments: {
+    //     'id': id,
+    //     'title': title,
+    //   },
+    // );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.greenAccent,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-  backgroundColor: Colors.greenAccent,
+  backgroundColor: Colors.white,
   title: Text(
     'Events',
     style: TextStyle(
           fontFamily: 'Lexend Deca',
-          color: Color(0xFF090F13),
+          color: Colors.black,
           fontSize: 30,
           fontWeight: FontWeight.bold,
         ),
   ),
   actions: [],
+
   elevation: 0,
 ),
 
@@ -130,7 +146,7 @@ itemCount: snapshot.data!.length,
                                                 ),
                                               ),
                                             ),
-                                            IconButton(onPressed: (){},splashColor: Colors.greenAccent,icon: Icon(Icons.chevron_right_outlined,color: Colors.white, size: 30,),)
+                                            IconButton(onPressed: () => selectEvent(context, snapshot.data![index]),splashColor: Color(0xFF4B39EF),icon: Icon(Icons.chevron_right_outlined,color: Color(0xFF4B39EF), size: 30,),)
                                           ],
                                         ),
                                       ),
@@ -145,7 +161,7 @@ itemCount: snapshot.data!.length,
                                                 snapshot.data![index].details,
                                                 style: TextStyle(
                                                   fontFamily: 'Lexend Deca',
-                                                  color: Color(0xFF39D2C0),
+                                                  color: Colors.white,
                                                   fontSize: 14,
                                                   fontWeight: FontWeight.normal,
                                                 ),
@@ -166,7 +182,7 @@ itemCount: snapshot.data!.length,
                                             children: [
                                               ElevatedButton.icon(
                                                 style: ElevatedButton.styleFrom(
-                                                  primary: Colors.greenAccent,
+                                                  primary: Color(0xFF4B39EF),
                                                   onPrimary: Colors.black,
                                                   shape: RoundedRectangleBorder(
                                                     borderRadius:
@@ -177,7 +193,7 @@ itemCount: snapshot.data!.length,
                                                 onPressed: () {
                                                   launch(snapshot.data![index].url);
                                                 },
-                                                label: Text('Reserve'),
+                                                label: Text('Reserve',style: TextStyle(color: Colors.white),),
                                                 icon: Icon(
                                                   Icons.add_rounded,
                                                   color: Colors.white,
@@ -315,7 +331,7 @@ itemCount: snapshot.data!.length,
           // By default, show a loading spinner.
           return Center(
             child: LoadingAnimationWidget.threeRotatingDots(
-                color: Colors.white, size: 50),
+                color: Color(0xFF4B39EF), size: 50),
           );
         },
       ),

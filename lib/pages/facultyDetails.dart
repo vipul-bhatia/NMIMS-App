@@ -12,8 +12,20 @@ class facultyDetailsScreen extends StatelessWidget {
     final fd = ModalRoute.of(context)!.settings.arguments as facultyDetail;
     return Scaffold(
       appBar: AppBar(
-        title: Text(fd.Title),
-      ),
+  backgroundColor: Colors.white,
+  title: Text(
+    fd.Title,
+    style: TextStyle(
+          fontFamily: 'Lexend Deca',
+          color: Colors.black,
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+        ),
+  ),
+  actions: [],
+
+  elevation: 0,
+),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -48,7 +60,7 @@ class facultyDetailsScreen extends StatelessWidget {
             ),
             Material(
               elevation: 20.0,
-              shadowColor: Colors.blue,
+              shadowColor: Color(0xFF4B39EF),
               child: Text(
                 fd.Title,
                 style: TextStyle(
@@ -62,7 +74,7 @@ class facultyDetailsScreen extends StatelessWidget {
             ),
             Material(
               elevation: 20.0,
-              shadowColor: Colors.blue,
+              shadowColor: Color(0xFF4B39EF),
               child: Text(
                 fd.details,
                 style: TextStyle(
@@ -75,7 +87,7 @@ class facultyDetailsScreen extends StatelessWidget {
             ),
             Material(
               elevation: 20.0,
-              shadowColor: Colors.blue,
+              shadowColor: Color(0xFF4B39EF),
               child: Text(
                 fd.sittingP,
                 style: TextStyle(
@@ -94,7 +106,7 @@ class facultyDetailsScreen extends StatelessWidget {
                   child: Material(
                     shape: CircleBorder(),
                     clipBehavior: Clip.hardEdge,
-                    color: Colors.transparent,
+                    color: Color(0xFF4B39EF),
                     child: InkWell(
                         onTap: () => launch(fd.linkedin),
                         child: Center(
@@ -113,7 +125,7 @@ class facultyDetailsScreen extends StatelessWidget {
                   child: Material(
                     shape: CircleBorder(),
                     clipBehavior: Clip.hardEdge,
-                    color: Colors.transparent,
+                    color: Color(0xFF4B39EF),
                     child: InkWell(
                         onTap: () => launch('mailto: fd.email'),
                         child: Center(
@@ -132,7 +144,7 @@ class facultyDetailsScreen extends StatelessWidget {
                   child: Material(
                     shape: CircleBorder(),
                     clipBehavior: Clip.hardEdge,
-                    color: Colors.transparent,
+                    color: Color(0xFF4B39EF),
                     child: InkWell(
                         onTap: () => launch(fd.twitter),
                         child: Center(
@@ -151,7 +163,7 @@ class facultyDetailsScreen extends StatelessWidget {
                   child: Material(
                     shape: CircleBorder(),
                     clipBehavior: Clip.hardEdge,
-                    color: Colors.transparent,
+                    color: Color(0xFF4B39EF),
                     child: InkWell(
                         onTap: () => launch("tel: fd.phone"),
                         child: Center(
@@ -169,7 +181,7 @@ class facultyDetailsScreen extends StatelessWidget {
             ),
             Material(
               elevation: 20.0,
-              shadowColor: Colors.blue,
+              shadowColor: Color(0xFF4B39EF),
               child: Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: Column(
@@ -195,7 +207,7 @@ class facultyDetailsScreen extends StatelessWidget {
             ),
             Material(
               elevation: 20.0,
-              shadowColor: Colors.blue,
+              shadowColor: Color(0xFF4B39EF),
               child: Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: Column(

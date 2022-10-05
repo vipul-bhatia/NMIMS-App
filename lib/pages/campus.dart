@@ -1,6 +1,7 @@
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
+import 'package:mdi/mdi.dart';
 
 class CampusScreen extends StatelessWidget {
   @override
@@ -9,15 +10,18 @@ class CampusScreen extends StatelessWidget {
       length: 5,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(20.0),
             child: TabBar(isScrollable: true,
+        
               tabs: [
-                Tab( text: 'A Wing'),
-                Tab( text: 'B Wing'),
-                Tab( text: 'C Wing'),
-                Tab( text: 'D Wing'),
-                Tab( text: 'Workshop',icon: Icon(Icons.factory_outlined),),
+                Tab( child: Text('Wing', style: TextStyle(fontSize: 16,color: Colors.black),),icon: Icon(Mdi.alphaA,color: Color(0xFF4B39EF),size: 35,),iconMargin: EdgeInsets.all(0),),
+                Tab( child: Text('Wing', style: TextStyle(fontSize: 16,color: Colors.black),),icon: Icon(Mdi.alphaB,color: Color(0xFF4B39EF),size: 35,),iconMargin: EdgeInsets.all(0),),
+                Tab( child: Text('Wing', style: TextStyle(fontSize: 16,color: Colors.black),),icon: Icon(Mdi.alphaC,color: Color(0xFF4B39EF),size: 35,),iconMargin: EdgeInsets.all(0),),
+                Tab( child: Text('Wing', style: TextStyle(fontSize: 16,color: Colors.black),),icon: Icon(Mdi.alphaD,color: Color(0xFF4B39EF),size: 35,),iconMargin: EdgeInsets.all(0),),
+                Tab( child: Text('Workshop', style: TextStyle(fontSize: 16,color: Colors.black),),icon: Icon(Icons.factory_outlined,color: Color(0xFF4B39EF),)),
               ],
             ),
           ),
@@ -37,6 +41,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -55,6 +60,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -73,6 +79,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -91,6 +98,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -109,6 +117,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -127,6 +136,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -145,6 +155,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -163,6 +174,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -187,6 +199,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -205,6 +218,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -223,6 +237,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -241,6 +256,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -259,6 +275,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -277,6 +294,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -295,6 +313,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -313,6 +332,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -331,6 +351,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -349,6 +370,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -373,6 +395,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -391,6 +414,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -409,6 +433,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -427,6 +452,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
@@ -445,6 +471,7 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),

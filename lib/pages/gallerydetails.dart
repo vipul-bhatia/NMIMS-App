@@ -41,9 +41,21 @@ class _galleryDetailsScreenState extends State<galleryDetailsScreen>
     final gd = ModalRoute.of(context)!.settings.arguments as galleryData;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(gd.Title),
-      ),
+      appBar:AppBar(
+  backgroundColor: Colors.white,
+  title: Text(
+    'Gallery',
+    style: TextStyle(
+          fontFamily: 'Lexend Deca',
+          color: Colors.black,
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+        ),
+  ),
+  actions: [],
+
+  elevation: 0,
+),
       body: Container(
         child: Column(
           children: [
@@ -58,10 +70,11 @@ class _galleryDetailsScreenState extends State<galleryDetailsScreen>
             ),
             Material(
               elevation: 20.0,
-              shadowColor: Colors.blue,
+              shadowColor: Color(0xFF4B39EF),
               child: Text(
                 gd.Title,
                 style: TextStyle(
+                  color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
@@ -80,7 +93,7 @@ class _galleryDetailsScreenState extends State<galleryDetailsScreen>
           Bubble(
             title: "Save in Gallery",
             iconColor: Colors.white,
-            bubbleColor: Colors.blue,
+            bubbleColor: Color(0xFF4B39EF),
             icon: Icons.save,
             titleStyle: TextStyle(fontSize: 16, color: Colors.white),
             onPress: (() async {
@@ -99,7 +112,7 @@ class _galleryDetailsScreenState extends State<galleryDetailsScreen>
           Bubble(
             title: "Show in Google",
             iconColor: Colors.white,
-            bubbleColor: Colors.blue,
+            bubbleColor: Color(0xFF4B39EF),
             icon: Icons.search,
             titleStyle: TextStyle(fontSize: 16, color: Colors.white),
             onPress: (() async {
@@ -110,7 +123,7 @@ class _galleryDetailsScreenState extends State<galleryDetailsScreen>
           Bubble(
             title: "Share",
             iconColor: Colors.white,
-            bubbleColor: Colors.blue,
+            bubbleColor: Color(0xFF4B39EF),
             icon: Icons.share,
             titleStyle: TextStyle(fontSize: 16, color: Colors.white),
             onPress: (() async {
@@ -143,11 +156,11 @@ class _galleryDetailsScreenState extends State<galleryDetailsScreen>
             : _animationController.forward(),
 
         // Floating Action button Icon color
-        iconColor: Colors.blue,
+        iconColor: Colors.white,
 
         // Flaoting Action button Icon
         iconData: Icons.ac_unit,
-        backGroundColor: Colors.white,
+        backGroundColor: Color(0xFF4B39EF),
       ),
     );
   }

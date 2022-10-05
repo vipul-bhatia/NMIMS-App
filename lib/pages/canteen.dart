@@ -434,7 +434,7 @@ class _canteenScreenState extends State<canteenScreen> {
           }
           // By default, show a loading spinner.
           return Center(
-            child: LoadingAnimationWidget.threeRotatingDots(color: Colors.white, size: 50),
+            child: LoadingAnimationWidget.threeRotatingDots(color: Color(0xFF4B39EF), size: 50),
           );
         },
       ),

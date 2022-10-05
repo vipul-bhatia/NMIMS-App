@@ -88,16 +88,30 @@ class _hostelScreenState extends State<hostelScreen> {
           if (snapshot.hasData) {
             return Scaffold(
               appBar: AppBar(
+                backgroundColor: Colors.white,
+                elevation: 0,
                 bottom: PreferredSize(
                   preferredSize: Size.fromHeight(20),
                   child: TabBar(padding: EdgeInsets.all(0),
                       //isScrollable: true,
                       tabs: [
                         Tab(
-                            icon: Icon(Icons.boy_sharp),
-                            text: 'New Boys Hostel'),
-                        Tab(icon: Icon(Icons.boy_outlined), text: 'Old Boys Hostel'),
-                        Tab(icon: Icon(Icons.girl_sharp), text: 'Girls Hostel'),
+                            icon: Icon(Icons.boy_sharp,color: Color(0xFF4B39EF),),
+                            child: Text(
+                                "Breakfast",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black),
+                              )),
+                        Tab(icon: Icon(Icons.boy_outlined,color: Color(0xFF4B39EF),),  child: Text(
+                                "Breakfast",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black),
+                              )),
+                        Tab(icon: Icon(Icons.girl_sharp,color: Color(0xFF4B39EF),),  child: Text(
+                                "Breakfast",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black),
+                              )),
                       ]),
                 ),
               ),
@@ -232,7 +246,7 @@ class _hostelScreenState extends State<hostelScreen> {
             child: Image.asset("Assets/nointernet.jpg")
           );
           }
-          return LoadingAnimationWidget.threeRotatingDots(color: Colors.white, size: 50);
+          return LoadingAnimationWidget.threeRotatingDots(color: Color(0xFF4B39EF), size: 50);
         },
       ),
     );
