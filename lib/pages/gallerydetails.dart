@@ -42,6 +42,7 @@ class _galleryDetailsScreenState extends State<galleryDetailsScreen>
 
     return Scaffold(
       appBar:AppBar(
+         iconTheme: IconThemeData(color: Color(0xFF4B39EF)),
   backgroundColor: Colors.white,
   title: Text(
     'Gallery',

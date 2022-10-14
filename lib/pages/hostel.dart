@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:lottie/lottie.dart';
 import 'dart:convert';
 import '../models/hostel.dart';
 
@@ -59,7 +60,7 @@ Future<List<HostelType>> fatchMenu() async {
     // If the server did not return a 200 OK response,
     // then throw an exception.
     throw  Center(
-            child: Image.asset("Assets/nointernet.jpg")
+            child: LottieBuilder.asset('Assets/no-internet.json')
           );
   }
 }
@@ -88,32 +89,31 @@ class _hostelScreenState extends State<hostelScreen> {
           if (snapshot.hasData) {
             return Scaffold(
               appBar: AppBar(
+                 iconTheme: IconThemeData(color: Color(0xFF4B39EF)),
+                title: Text('Hostel',style: TextStyle(fontSize: 30,color: Colors.black,fontWeight: FontWeight.bold),),
                 backgroundColor: Colors.white,
                 elevation: 0,
-                bottom: PreferredSize(
-                  preferredSize: Size.fromHeight(20),
-                  child: TabBar(padding: EdgeInsets.all(0),
-                      //isScrollable: true,
-                      tabs: [
-                        Tab(
-                            icon: Icon(Icons.boy_sharp,color: Color(0xFF4B39EF),),
-                            child: Text(
-                                "Breakfast",
-                                style: TextStyle(
-                                    fontSize: 16, color: Colors.black),
-                              )),
-                        Tab(icon: Icon(Icons.boy_outlined,color: Color(0xFF4B39EF),),  child: Text(
-                                "Breakfast",
-                                style: TextStyle(
-                                    fontSize: 16, color: Colors.black),
-                              )),
-                        Tab(icon: Icon(Icons.girl_sharp,color: Color(0xFF4B39EF),),  child: Text(
-                                "Breakfast",
-                                style: TextStyle(
-                                    fontSize: 16, color: Colors.black),
-                              )),
-                      ]),
-                ),
+                bottom: TabBar(padding: EdgeInsets.all(0),
+                    //isScrollable: true,
+                    tabs: [
+                      Tab(
+                          icon: Icon(Icons.boy_sharp,color: Color(0xFF4B39EF),),
+                          child: Text(
+                              "New Boys",
+                              style: TextStyle(
+                                  fontSize: 16, color: Colors.black),
+                            )),
+                      Tab(icon: Icon(Icons.boy_outlined,color: Color(0xFF4B39EF),),  child: Text(
+                              "Old Boys",
+                              style: TextStyle(
+                                  fontSize: 16, color: Colors.black),
+                            )),
+                      Tab(icon: Icon(Icons.girl_sharp,color: Color(0xFF4B39EF),),  child: Text(
+                              "Girls Hostel",
+                              style: TextStyle(
+                                  fontSize: 16, color: Colors.black),
+                            )),
+                    ]),
               ),
               body: //Center(
                   //child: Image.asset('Assets/UnderC.jpg'),
@@ -243,7 +243,7 @@ class _hostelScreenState extends State<hostelScreen> {
             );
           } else if (snapshot.hasError) {
             return  Center(
-            child: Image.asset("Assets/nointernet.jpg")
+            child: LottieBuilder.asset('Assets/no-internet.json')
           );
           }
           return LoadingAnimationWidget.threeRotatingDots(color: Color(0xFF4B39EF), size: 50);

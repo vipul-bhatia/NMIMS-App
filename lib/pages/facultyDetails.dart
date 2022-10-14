@@ -9,16 +9,17 @@ class facultyDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fd = ModalRoute.of(context)!.settings.arguments as facultyDetail;
+    final fd = ModalRoute.of(context)!.settings.arguments as Faculties;
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Color(0xFF4B39EF)),
   backgroundColor: Colors.white,
   title: Text(
-    fd.Title,
+ fd.Title,
     style: TextStyle(
           fontFamily: 'Lexend Deca',
           color: Colors.black,
-          fontSize: 30,
+          fontSize: 24,
           fontWeight: FontWeight.bold,
         ),
   ),
@@ -58,41 +59,29 @@ class facultyDetailsScreen extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            Material(
-              elevation: 20.0,
-              shadowColor: Color(0xFF4B39EF),
-              child: Text(
-                fd.Title,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+            Text(
+              fd.Title,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(
               height: 15,
             ),
-            Material(
-              elevation: 20.0,
-              shadowColor: Color(0xFF4B39EF),
-              child: Text(
-                fd.details,
-                style: TextStyle(
-                  fontSize: 20,
-                ),
+            Text(
+              fd.details,
+              style: TextStyle(
+                fontSize: 20,
               ),
             ),
             SizedBox(
               height: 15,
             ),
-            Material(
-              elevation: 20.0,
-              shadowColor: Color(0xFF4B39EF),
-              child: Text(
-                fd.sittingP,
-                style: TextStyle(
-                  fontSize: 20,
-                ),
+            Text(
+              fd.sittingP,
+              style: TextStyle(
+                fontSize: 20,
               ),
             ),
             SizedBox(
@@ -139,36 +128,18 @@ class facultyDetailsScreen extends StatelessWidget {
                 SizedBox(
                   width: 20,
                 ),
-                CircleAvatar(
+               
+             CircleAvatar(
                   radius: 30,
                   child: Material(
                     shape: CircleBorder(),
                     clipBehavior: Clip.hardEdge,
                     color: Color(0xFF4B39EF),
                     child: InkWell(
-                        onTap: () => launch(fd.twitter),
+                        onTap: () => launch('mailto: fd.email'),
                         child: Center(
                           child: Icon(
-                            FontAwesomeIcons.twitter,
-                            size: 32,
-                          ),
-                        )),
-                  ),
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                CircleAvatar(
-                  radius: 30,
-                  child: Material(
-                    shape: CircleBorder(),
-                    clipBehavior: Clip.hardEdge,
-                    color: Color(0xFF4B39EF),
-                    child: InkWell(
-                        onTap: () => launch("tel: fd.phone"),
-                        child: Center(
-                          child: Icon(
-                            FontAwesomeIcons.phone,
+                            Icons.link,
                             size: 32,
                           ),
                         )),
@@ -179,54 +150,27 @@ class facultyDetailsScreen extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            Material(
-              elevation: 20.0,
-              shadowColor: Color(0xFF4B39EF),
-              child: Padding(
-                padding: const EdgeInsets.all(25.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'About',
-                      style: TextStyle(fontSize: 28),
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Text(
-                      fd.about,
-                      style: TextStyle(),
-                    )
-                  ],
-                ),
+            Padding(
+              padding: const EdgeInsets.all(25.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'About',
+                    style: TextStyle(fontSize: 28),
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Text(
+                    fd.about,
+                    style: TextStyle(),
+                  )
+                ],
               ),
             ),
             SizedBox(
               height: 15,
-            ),
-            Material(
-              elevation: 20.0,
-              shadowColor: Color(0xFF4B39EF),
-              child: Padding(
-                padding: const EdgeInsets.all(25.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Qualifications',
-                      style: TextStyle(fontSize: 28),
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Text(
-                      fd.qualifications,
-                      style: TextStyle(),
-                    )
-                  ],
-                ),
-              ),
             ),
           ],
         ),

@@ -14,14 +14,66 @@ class CampusScreen extends StatelessWidget {
           elevation: 0,
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(20.0),
-            child: TabBar(isScrollable: true,
-        
+            child: TabBar(
+              isScrollable: true,
               tabs: [
-                Tab( child: Text('Wing', style: TextStyle(fontSize: 16,color: Colors.black),),icon: Icon(Mdi.alphaA,color: Color(0xFF4B39EF),size: 35,),iconMargin: EdgeInsets.all(0),),
-                Tab( child: Text('Wing', style: TextStyle(fontSize: 16,color: Colors.black),),icon: Icon(Mdi.alphaB,color: Color(0xFF4B39EF),size: 35,),iconMargin: EdgeInsets.all(0),),
-                Tab( child: Text('Wing', style: TextStyle(fontSize: 16,color: Colors.black),),icon: Icon(Mdi.alphaC,color: Color(0xFF4B39EF),size: 35,),iconMargin: EdgeInsets.all(0),),
-                Tab( child: Text('Wing', style: TextStyle(fontSize: 16,color: Colors.black),),icon: Icon(Mdi.alphaD,color: Color(0xFF4B39EF),size: 35,),iconMargin: EdgeInsets.all(0),),
-                Tab( child: Text('Workshop', style: TextStyle(fontSize: 16,color: Colors.black),),icon: Icon(Icons.factory_outlined,color: Color(0xFF4B39EF),)),
+                Tab(
+                  child: Text(
+                    'Wing',
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                  ),
+                  icon: Icon(
+                    Mdi.alphaA,
+                    color: Color(0xFF4B39EF),
+                    size: 35,
+                  ),
+                  iconMargin: EdgeInsets.all(0),
+                ),
+                Tab(
+                  child: Text(
+                    'Wing',
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                  ),
+                  icon: Icon(
+                    Mdi.alphaB,
+                    color: Color(0xFF4B39EF),
+                    size: 35,
+                  ),
+                  iconMargin: EdgeInsets.all(0),
+                ),
+                Tab(
+                  child: Text(
+                    'Wing',
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                  ),
+                  icon: Icon(
+                    Mdi.alphaC,
+                    color: Color(0xFF4B39EF),
+                    size: 35,
+                  ),
+                  iconMargin: EdgeInsets.all(0),
+                ),
+                Tab(
+                  child: Text(
+                    'Wing',
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                  ),
+                  icon: Icon(
+                    Mdi.alphaD,
+                    color: Color(0xFF4B39EF),
+                    size: 35,
+                  ),
+                  iconMargin: EdgeInsets.all(0),
+                ),
+                Tab(
+                    child: Text(
+                      'Workshop',
+                      style: TextStyle(fontSize: 16, color: Colors.black),
+                    ),
+                    icon: Icon(
+                      Icons.factory_outlined,
+                      color: Color(0xFF4B39EF),
+                    )),
               ],
             ),
           ),
@@ -502,11 +554,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.account),
                         ),
                       ),
                     ),
@@ -520,11 +573,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.lifebuoy),
                         ),
                       ),
                     ),
@@ -538,11 +592,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.pencilRuler),
                         ),
                       ),
                     ),
@@ -556,11 +611,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.testTube),
                         ),
                       ),
                     ),
@@ -574,11 +630,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.testTube),
                         ),
                       ),
                     ),
@@ -592,11 +649,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.lightbulbOn),
                         ),
                       ),
                     ),
@@ -610,11 +668,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.alphaF),
                         ),
                       ),
                     ),
@@ -634,11 +693,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.accountGroupOutline),
                         ),
                       ),
                     ),
@@ -652,11 +712,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.officeBuilding),
                         ),
                       ),
                     ),
@@ -670,16 +731,17 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.laptop),
                         ),
                       ),
                     ),
                     title: Text(
-                      'Comuter Centre-1 & 2',
+                      'Computer Centre-1 & 2',
                       style: TextStyle(fontSize: 18),
                     ),
                   ),
@@ -688,11 +750,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.laptop),
                         ),
                       ),
                     ),
@@ -707,10 +770,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.hammerWrench),
                         ),
                       ),
                     ),
@@ -724,11 +788,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.database),
                         ),
                       ),
                     ),
@@ -742,11 +807,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.googleClassroom),
                         ),
                       ),
                     ),
@@ -766,11 +832,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.bookshelf),
                         ),
                       ),
                     ),
@@ -784,11 +851,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.accountGroupOutline),
                         ),
                       ),
                     ),
@@ -802,11 +870,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.lightbulbOn),
                         ),
                       ),
                     ),
@@ -820,11 +889,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.phoneInTalk),
                         ),
                       ),
                     ),
@@ -838,11 +908,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.chip),
                         ),
                       ),
                     ),
@@ -856,11 +927,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.laptop),
                         ),
                       ),
                     ),
@@ -874,11 +946,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.laptop),
                         ),
                       ),
                     ),
@@ -892,11 +965,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.laptop),
                         ),
                       ),
                     ),
@@ -910,11 +984,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.cogOutline),
                         ),
                       ),
                     ),
@@ -928,11 +1003,12 @@ class CampusScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
+                      backgroundColor: Color(0xFF4B39EF),
                       radius: 30,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.meeting_room),
+                          child: Icon(Mdi.googleClassroom),
                         ),
                       ),
                     ),
@@ -959,10 +1035,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.account),
                         ),
                       ),
                     ),
@@ -977,10 +1054,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.bullhorn),
                         ),
                       ),
                     ),
@@ -995,10 +1073,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.school),
                         ),
                       ),
                     ),
@@ -1013,10 +1092,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.account),
                         ),
                       ),
                     ),
@@ -1031,10 +1111,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.accountGroup),
                         ),
                       ),
                     ),
@@ -1049,10 +1130,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.theater),
                         ),
                       ),
                     ),
@@ -1067,10 +1149,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.leadPencil),
                         ),
                       ),
                     ),
@@ -1085,10 +1168,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.chartAreaspline),
                         ),
                       ),
                     ),
@@ -1103,10 +1187,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.domain),
                         ),
                       ),
                     ),
@@ -1127,10 +1212,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.accountGroupOutline),
                         ),
                       ),
                     ),
@@ -1145,10 +1231,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.fileSwap),
                         ),
                       ),
                     ),
@@ -1163,10 +1250,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.phoneInTalk),
                         ),
                       ),
                     ),
@@ -1181,10 +1269,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.meeting_room),
+                          child: Icon(Mdi.googleClassroom),
                         ),
                       ),
                     ),
@@ -1205,10 +1294,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.googleClassroom),
                         ),
                       ),
                     ),
@@ -1223,10 +1313,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.laptop),
                         ),
                       ),
                     ),
@@ -1241,10 +1332,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.accessPointNetwork),
                         ),
                       ),
                     ),
@@ -1259,10 +1351,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.desktopClassic),
                         ),
                       ),
                     ),
@@ -1277,10 +1370,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.transmissionTower),
                         ),
                       ),
                     ),
@@ -1295,10 +1389,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.webpack),
                         ),
                       ),
                     ),
@@ -1313,10 +1408,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.chip),
                         ),
                       ),
                     ),
@@ -1331,10 +1427,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.meeting_room_rounded),
+                          child: Icon(Icons.doorbell),
                         ),
                       ),
                     ),
@@ -1349,10 +1446,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.meeting_room),
+                          child: Icon(Mdi.googleClassroom),
                         ),
                       ),
                     ),
@@ -1365,6 +1463,7 @@ class CampusScreen extends StatelessWidget {
               ],
             ),
 
+            //D Wing
             //D Wing
             ListView(
               children: [
@@ -1379,10 +1478,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.flask),
                         ),
                       ),
                     ),
@@ -1397,10 +1497,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.tools),
                         ),
                       ),
                     ),
@@ -1415,10 +1516,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.piston),
                         ),
                       ),
                     ),
@@ -1433,10 +1535,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.thermostat),
                         ),
                       ),
                     ),
@@ -1451,10 +1554,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.leak),
                         ),
                       ),
                     ),
@@ -1464,16 +1568,16 @@ class CampusScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.robotIndustrial),
                         ),
                       ),
                     ),
@@ -1488,10 +1592,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.class_),
+                          child: Icon(Mdi.progressCheck),
                         ),
                       ),
                     ),
@@ -1506,10 +1611,11 @@ class CampusScreen extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
+                      backgroundColor: Color(0xFF4B39EF),
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Icon(Icons.meeting_room),
+                          child: Icon(Mdi.googleClassroom),
                         ),
                       ),
                     ),
@@ -1521,229 +1627,239 @@ class CampusScreen extends StatelessWidget {
                 ),
               ],
             ),
-
-                //Workshop
-                ListView(children: [
-                  ListTile(
-                    title: Text(
-                      'Ground Floor',
-                      style: TextStyle(fontSize: 24),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        radius: 30,
-                        child: Padding(
-                          padding: EdgeInsets.all(6),
-                          child: FittedBox(
-                            child: Icon(Icons.class_),
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        'CNC Lab',
-                        style: TextStyle(fontSize: 18),
+            //Workshop
+            ListView(children: [
+              ListTile(
+                title: Text(
+                  'Ground Floor',
+                  style: TextStyle(fontSize: 24),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Color(0xFF4B39EF),
+                    child: Padding(
+                      padding: EdgeInsets.all(6),
+                      child: FittedBox(
+                        child: Icon(Mdi.wrenchOutline),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        radius: 30,
-                        child: Padding(
-                          padding: EdgeInsets.all(6),
-                          child: FittedBox(
-                            child: Icon(Icons.class_),
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        'Workshop 1 & 2',
-                        style: TextStyle(fontSize: 18),
+                  title: Text(
+                    'CNC Lab',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Color(0xFF4B39EF),
+                    child: Padding(
+                      padding: EdgeInsets.all(6),
+                      child: FittedBox(
+                        child: Icon(Mdi.wrench),
                       ),
                     ),
                   ),
-                  ListTile(
-                    title: Text(
-                      'First Floor',
-                      style: TextStyle(fontSize: 24),
-                    ),
+                  title: Text(
+                    'Workshop 1 & 2',
+                    style: TextStyle(fontSize: 18),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        radius: 30,
-                        child: Padding(
-                          padding: EdgeInsets.all(6),
-                          child: FittedBox(
-                            child: Icon(Icons.class_),
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        'Measurement & Metrology',
-                        style: TextStyle(fontSize: 18),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        radius: 30,
-                        child: Padding(
-                          padding: EdgeInsets.all(6),
-                          child: FittedBox(
-                            child: Icon(Icons.class_),
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        'Theory of Machine Lab',
-                        style: TextStyle(fontSize: 18),
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  'First Floor',
+                  style: TextStyle(fontSize: 24),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Color(0xFF4B39EF),
+                    child: Padding(
+                      padding: EdgeInsets.all(6),
+                      child: FittedBox(
+                        child: Icon(Mdi.wiper),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        radius: 30,
-                        child: Padding(
-                          padding: EdgeInsets.all(6),
-                          child: FittedBox(
-                            child: Icon(Icons.computer),
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        'Computer Centre',
-                        style: TextStyle(fontSize: 18),
+                  title: Text(
+                    'Measurement & Metrology',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Color(0xFF4B39EF),
+                    child: Padding(
+                      padding: EdgeInsets.all(6),
+                      child: FittedBox(
+                        child: Icon(Mdi.slotMachineOutline),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        radius: 30,
-                        child: Padding(
-                          padding: EdgeInsets.all(6),
-                          child: FittedBox(
-                            child: Icon(Icons.meeting_room),
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        'Faculty Area 001 & 002',
-                        style: TextStyle(fontSize: 18),
+                  title: Text(
+                    'Theory of Machine Lab',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Color(0xFF4B39EF),
+                    child: Padding(
+                      padding: EdgeInsets.all(6),
+                      child: FittedBox(
+                        child: Icon(Mdi.desktopClassic),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        radius: 30,
-                        child: Padding(
-                          padding: EdgeInsets.all(6),
-                          child: FittedBox(
-                            child: Icon(Icons.meeting_room),
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        'LR 001 & 002',
-                        style: TextStyle(fontSize: 18),
+                  title: Text(
+                    'Computer Centre',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Color(0xFF4B39EF),
+                    child: Padding(
+                      padding: EdgeInsets.all(6),
+                      child: FittedBox(
+                        child: Icon(Mdi.accountGroupOutline),
                       ),
                     ),
                   ),
-                  ListTile(
-                    title: Text(
-                      'Second Floor',
-                      style: TextStyle(fontSize: 24),
-                    ),
+                  title: Text(
+                    'Faculty Area 001 & 002',
+                    style: TextStyle(fontSize: 18),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        radius: 30,
-                        child: Padding(
-                          padding: EdgeInsets.all(6),
-                          child: FittedBox(
-                            child: Icon(Icons.class_),
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        'CAD Centre',
-                        style: TextStyle(fontSize: 18),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Color(0xFF4B39EF),
+                    child: Padding(
+                      padding: EdgeInsets.all(6),
+                      child: FittedBox(
+                        child: Icon(Mdi.googleClassroom),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        radius: 30,
-                        child: Padding(
-                          padding: EdgeInsets.all(6),
-                          child: FittedBox(
-                            child: Icon(Icons.class_),
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        'Heat Transfer Lab',
-                        style: TextStyle(fontSize: 18),
+                  title: Text(
+                    'LR 001 & 002',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  'Second Floor',
+                  style: TextStyle(fontSize: 24),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Color(0xFF4B39EF),
+                    child: Padding(
+                      padding: EdgeInsets.all(6),
+                      child: FittedBox(
+                        child: Icon(Mdi.fileCad),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        radius: 30,
-                        child: Padding(
-                          padding: EdgeInsets.all(6),
-                          child: FittedBox(
-                            child: Icon(Icons.class_),
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        'Faculty Area 003',
-                        style: TextStyle(fontSize: 18),
+                  title: Text(
+                    'CAD Centre',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Color(0xFF4B39EF),
+                    child: Padding(
+                      padding: EdgeInsets.all(6),
+                      child: FittedBox(
+                        child: Icon(Mdi.radiator),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        radius: 30,
-                        child: Padding(
-                          padding: EdgeInsets.all(6),
-                          child: FittedBox(
-                            child: Icon(Icons.meeting_room),
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        'LR 003 & 004',
-                        style: TextStyle(fontSize: 18),
+                  title: Text(
+                    'Heat Transfer Lab',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Color(0xFF4B39EF),
+                    child: Padding(
+                      padding: EdgeInsets.all(6),
+                      child: FittedBox(
+                        child: Icon(Mdi.accountGroupOutline),
                       ),
                     ),
                   ),
-                ]),
-              ],
-            ),
-      ),);
+                  title: Text(
+                    'Faculty Area 003',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Color(0xFF4B39EF),
+                    child: Padding(
+                      padding: EdgeInsets.all(6),
+                      child: FittedBox(
+                        child: Icon(Mdi.googleClassroom),
+                      ),
+                    ),
+                  ),
+                  title: Text(
+                    'LR 003 & 004',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
+            ]),
+          ],
+        ),
+      ),
+    );
   }
 }
-         

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -108,7 +109,7 @@ Future<List<ListType>> fatchcallnumber() async {
     // If the server did not return a 200 OK response,
     // then throw an exception.
     throw  Center(
-            child: Image.asset("Assets/nointernet.jpg")
+            child: LottieBuilder.asset('Assets/no-internet.json')
           );
   }
   return listtypes;
@@ -132,8 +133,21 @@ class _ContactScreenState extends State<ContactScreen> {
           if (snapshot.hasData) {
             return Scaffold(
               appBar: AppBar(
-                title: Text("Contacts"),
+                 iconTheme: IconThemeData(color: Color(0xFF4B39EF)),
+                backgroundColor: Colors.white,
+               title: Text(
+    'Contacts',
+    style: TextStyle(
+          fontFamily: 'Lexend Deca',
+          color: Colors.black,
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+        ),
+  ),
+  elevation: 0,
                 bottom: TabBar(
+                 labelColor: Colors.black,
+                 indicatorColor: Color(0xFF4B39EF),
                   isScrollable: true,
                   tabs: [
                     Tab(
@@ -178,7 +192,7 @@ class _ContactScreenState extends State<ContactScreen> {
                             subtitle:
                                 Text(snapshot.data![0].numbers[index].number),
                             trailing: IconButton(
-                              icon: Icon(Icons.call),
+                              icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
                               onPressed: () {
                                  launch(
                                     "tel:${snapshot.data![0].numbers[index].number}");
@@ -204,7 +218,7 @@ class _ContactScreenState extends State<ContactScreen> {
                             subtitle:
                                 Text(snapshot.data![1].numbers[index].number),
                             trailing: IconButton(
-                              icon: Icon(Icons.call),
+                              icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
                               onPressed: () {
                                 launch(
                                     "tel:${snapshot.data![1].numbers[index].number}");
@@ -228,7 +242,7 @@ class _ContactScreenState extends State<ContactScreen> {
                             subtitle:
                                 Text(snapshot.data![2].numbers[index].number),
                             trailing: IconButton(
-                              icon: Icon(Icons.call),
+                              icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
                               onPressed: () {
                                 launch(
                                     "tel:${snapshot.data![2].numbers[index].number}");
@@ -252,7 +266,7 @@ class _ContactScreenState extends State<ContactScreen> {
                             subtitle:
                                 Text(snapshot.data![3].numbers[index].number),
                             trailing: IconButton(
-                              icon: Icon(Icons.call),
+                              icon: Icon(Icons.call,color:Color(0xFF4B39EF)),
                               onPressed: () {
                                 launch(
                                     "tel:${snapshot.data![3].numbers[index].number}");
@@ -276,7 +290,7 @@ class _ContactScreenState extends State<ContactScreen> {
                             subtitle:
                                 Text(snapshot.data![4].numbers[index].number),
                             trailing: IconButton(
-                              icon: Icon(Icons.call),
+                              icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
                               onPressed: () {
                                 launch(
                                     "tel:${snapshot.data![4].numbers[index].number}");
@@ -300,7 +314,7 @@ class _ContactScreenState extends State<ContactScreen> {
                             subtitle:
                                 Text(snapshot.data![5].numbers[index].number),
                             trailing: IconButton(
-                              icon: Icon(Icons.call),
+                              icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
                               onPressed: () {
                                 launch(
                                     "tel:${snapshot.data![5].numbers[index].number}");
@@ -324,7 +338,7 @@ class _ContactScreenState extends State<ContactScreen> {
                             subtitle:
                                 Text(snapshot.data![6].numbers[index].number),
                             trailing: IconButton(
-                              icon: Icon(Icons.call),
+                              icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
                               onPressed: () {
                                 launch(
                                     "tel:${snapshot.data![6].numbers[index].number}");
@@ -348,7 +362,7 @@ class _ContactScreenState extends State<ContactScreen> {
                             subtitle:
                                 Text(snapshot.data![7].numbers[index].number),
                             trailing: IconButton(
-                              icon: Icon(Icons.call),
+                              icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
                               onPressed: () {
                                 launch(
                                     "tel:${snapshot.data![7].numbers[index].number}");
@@ -364,7 +378,7 @@ class _ContactScreenState extends State<ContactScreen> {
             );
           } else if (snapshot.hasError) {
             return  Center(
-            child: Image.asset("Assets/nointernet.jpg")
+            child: LottieBuilder.asset('Assets/no-internet.json')
           );
           }
           return Center(child: LoadingAnimationWidget.threeRotatingDots(color: Color(0xFF4B39EF), size: 50),);

@@ -6,6 +6,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:lottie/lottie.dart';
 import '../pages/gallerydetails.dart';
 
 Future<List<galleryData>> galleryDatas() async {
@@ -28,7 +29,7 @@ Future<List<galleryData>> galleryDatas() async {
     // If the server did not return a 200 OK response,
     // then throw an exception.
     throw  Center(
-            child: Image.asset("Assets/nointernet.jpg")
+            child:LottieBuilder.asset('Assets/no-internet.json')
           );
   }
 }
@@ -58,6 +59,7 @@ class _galleryScreenState extends State<galleryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+         iconTheme: IconThemeData(color: Color(0xFF4B39EF)),
   backgroundColor: Colors.white,
   title: Text(
     'Gallery',
@@ -106,7 +108,7 @@ class _galleryScreenState extends State<galleryScreen> {
             );
           } else if (snapshot.hasError) {
             return  Center(
-            child: Image.asset("Assets/nointernet.jpg")
+            child: LottieBuilder.asset('Assets/no-internet.json')
           );
           }
 

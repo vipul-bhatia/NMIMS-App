@@ -7,10 +7,10 @@ class ButtonWidget extends StatelessWidget {
   const ButtonWidget({
     required this.text,
     required this.onClicked,
-  });
+  }) : super();
 
   @override
-  Widget build(BuildContext context) => ElevatedButton(
+  Widget build(BuildContext context) => TextButton(
         child: Text(
           text,
           style: TextStyle(fontSize: 24),

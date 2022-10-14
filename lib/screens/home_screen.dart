@@ -1,23 +1,45 @@
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:lottie/lottie.dart';
+import 'package:mdi/mdi.dart';
 import '../pages/academics.dart';
 import '../pages/campus.dart';
 import '../pages/mess.dart';
 import '../pages/hostel.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../pages/events.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
+import '../pages/gallery.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin{
+  CountDownController _controller = CountDownController();
+  late final AnimationController _cantroller;
+  void initState(){
+    super.initState();
+    _cantroller = AnimationController(vsync: this);
+  }
+  void dispose(){
+    _cantroller.dispose();
+    super.dispose();
+  }
+  bool _isPlaying = false;
+  bool _isPause = false;
   void contactsScreen(BuildContext context) {
     Navigator.of(context).pushNamed('/contacts');
   }
 
   void linksScreen(BuildContext context) {
     Navigator.of(context).pushNamed('/links');
+  }
+
+  void hostelScreen(BuildContext context) {
+    Navigator.of(context).pushNamed('/hostel');
   }
 
   void documentsScreen(BuildContext context) {
@@ -44,10 +66,6 @@ class _HomeScreenState extends State<HomeScreen> {
     Navigator.of(context).pushNamed('/generalStore');
   }
 
-  void eventsScreen(BuildContext context) {
-    Navigator.of(context).pushNamed('/events');
-  }
-
   void facultyScreen(BuildContext context) {
     Navigator.of(context).pushNamed('/faculty');
   }
@@ -71,8 +89,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   final List<Map<String, dynamic>> _widgetOptions = [
     {'Pages': CampusScreen(), 'title': 'NMIMS Shirpur'},
-    {'Pages': CategoriesScreen(), 'title': 'NMIMS Shirpur'},
-    {'Pages': hostelScreen(), 'title': 'NMIMS Shirpur'},
+    {'Pages': academicsScreen(), 'title': 'NMIMS Shirpur'},
+    {'Pages': eventsScreen(), 'title': 'NMIMS Shirpur'},
     {'Pages': messScreen(), 'title': 'NMIMS Shirpur'},
   ];
 
@@ -87,28 +105,69 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             iconSize: 30,
-            icon: Icon(Icons.warning),
+            icon: Icon(Icons.sos_rounded),
             onPressed: () {
               showDialog(
                   context: context,
                   builder: (context) => AlertDialog(
                         title: Text('Emergency'),
                         content: Text(
-                            'Are you sur you want to call the emergency number for help ?'),
-                            actions: [
-                              TextButton(
-                                child: Text('Yes'),
-                                onPressed: () {
-                                  launch("tel://+919820000000");
-                                },
-                              ),
-                              TextButton(
-                                child: Text('No'),
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                              ),
-                            ],
+                            'Are you sure you want to call the emergency number for help ?'),
+                        actions: [
+                          Center(
+                            child: Column(
+                              children: [
+                                ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all(Color(
+                                      0xFF4B39EF,
+                                    )),
+                                    padding: MaterialStateProperty.all(
+                                        EdgeInsets.fromLTRB(30, 5, 30, 5)),
+                                  ),
+                                  child: Text(
+                                    'Boys',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  onPressed: () {
+                                    launch("tel://+919820000000");
+                                  },
+                                ),
+                                ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all(Color(
+                                      0xFF4B39EF,
+                                    )),
+                                    padding: MaterialStateProperty.all(
+                                        EdgeInsets.fromLTRB(30, 5, 30, 5)),
+                                  ),
+                                  child: Text('Girls',
+                                      style: TextStyle(fontSize: 20)),
+                                  onPressed: (){
+                                    launch("tel://+919820000000");
+                                  },
+                                ),
+                                ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all(Color(
+                                      0xFF4B39EF,
+                                    )),
+                                    padding: MaterialStateProperty.all(
+                                        EdgeInsets.fromLTRB(40, 5, 40, 5)),
+                                  ),
+                                  child: Text('No',
+                                      style: TextStyle(fontSize: 20)),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
                       ));
             },
           ),
@@ -148,7 +207,7 @@ class _HomeScreenState extends State<HomeScreen> {
           style: TextStyle(
             fontFamily: 'Lexend Deca',
             color: Colors.black,
-            fontSize: 30,
+            fontSize: 27,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -158,21 +217,27 @@ class _HomeScreenState extends State<HomeScreen> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('Assets/campus-1.jpg'),
-                  fit: BoxFit.fill,
+            GestureDetector(
+              onTap: () {
+                //gallery
+                galleryScreen(context);
+              },
+              child: const DrawerHeader(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('Assets/campus-1.jpg'),
+                    fit: BoxFit.fill,
+                  ),
                 ),
-              ),
-              child: Align(
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  'Explore',
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
+                child: Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text(
+                    'Explore ->',
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                    ),
                   ),
                 ),
               ),
@@ -201,48 +266,35 @@ class _HomeScreenState extends State<HomeScreen> {
                 canteenScreen(context);
               },
             ),
-            ListTile(
-              leading: Icon(
-                Icons.photo_library_outlined,
-                color: Color(0xFF4B39EF),
-              ),
-              title: Text(
-                'Gallery',
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-              ),
-              onTap: () {
-                galleryScreen(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.celebration,
-                color: Color(0xFF4B39EF),
-              ),
-              title: Text(
-                'Events',
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-              ),
-              onTap: () {
-                eventsScreen(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.movie,
-                color: Color(0xFF4B39EF),
-              ),
-              title: Text(
-                'Theatre',
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-              ),
-              onTap: () {
-                theatreScreen(context);
-              },
-            ),
+            // ListTile(
+            //   leading: Icon(
+            //     Icons.photo_library_outlined,
+            //     color: Color(0xFF4B39EF),
+            //   ),
+            //   title: Text(
+            //     'Gallery',
+            //     style:
+            //         TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            //   ),
+            //   onTap: () {
+            //     galleryScreen(context);
+            //   },
+            // ),
+
+            // ListTile(
+            //   leading: Icon(
+            //     Icons.movie,
+            //     color: Color(0xFF4B39EF),
+            //   ),
+            //   title: Text(
+            //     'Theatre',
+            //     style:
+            //         TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            //   ),
+            //   onTap: () {
+            //     theatreScreen(context);
+            //   },
+            // ),
             Divider(),
             Padding(
               padding: EdgeInsets.all(10),
@@ -252,6 +304,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   )),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.bed,
+                color: Color(0xFF4B39EF),
+              ),
+              title: Text(
+                'Hostel',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
+              onTap: () {
+                hostelScreen(context);
+              },
             ),
             ListTile(
               leading: Icon(
@@ -265,18 +331,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               onTap: (() => contactsScreen(context)),
             ),
-             ListTile(
-              leading: Icon(
-                Icons.newspaper,
-                color: Color(0xFF4B39EF),
-              ),
-              title: Text(
-                'News',
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-              ),
-              onTap: (() => newsScreen(context)),
-            ),
+           
             // ListTile(
             //   leading: Icon(
             //     Icons.link,
@@ -323,6 +378,18 @@ class _HomeScreenState extends State<HomeScreen> {
             //   ),
             //   onTap: (() => newsScreen(context)),
             // ),
+             ListTile(
+              leading: Icon(
+                Icons.newspaper,
+                color: Color(0xFF4B39EF),
+              ),
+              title: Text(
+                'News',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
+              onTap: (() => newsScreen(context)),
+            ),
             ListTile(
               leading: Icon(
                 Icons.feedback_outlined,
@@ -345,7 +412,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 style:
                     TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
               ),
-              onTap: (() => aboutScreen(context)),
+              onTap:(){Lottie.network(
+                      'https://assets10.lottiefiles.com/packages/lf20_fJ7CVd.json');
+                },
+              // onTap: (() => aboutScreen(context)),
             ),
             ListTile(
               leading: Icon(
@@ -362,17 +432,37 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
             Divider(),
-            Text(
-              "from",
-              textAlign: TextAlign.center,
-              overflow: TextOverflow.ellipsis,
+           //on tap on which animation happens
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Lottie.network(
+                      'https://assets10.lottiefiles.com/packages/lf20_fJ7CVd.json')));
+              },
+              child: Center(
+                child: Text(
+                  'Made with ❤️ by Team 1',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12,
+                  ),
+                ),
+              ),
             ),
-            Text(
-              "cmulay",
-              textAlign: TextAlign.center,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(fontWeight: FontWeight.bold),
-            ),
+            // Padding(
+            //   padding: EdgeInsets.all(10),
+            //   child: Lottie.network('https://assets10.lottiefiles.com/packages/lf20_fJ7CVd.json')
+            // ),
+            // GestureDetector(
+              
+            //     onTap: () {
+            //       Lottie.network(
+            //           'https://assets10.lottiefiles.com/packages/lf20_fJ7CVd.json');
+            //     },
+            //     child: Center(
+            //         child: Text(
+            //       'Made with Dot.',
+            //       style: TextStyle(fontSize: 20),
+            //     ))),
           ],
         ),
       ),
@@ -393,8 +483,6 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
             child: GNav(
-              rippleColor: Color(0xFF4B39EF),
-              hoverColor: Color(0xFF4B39EF),
               gap: 8,
               activeColor: Color(0xFF4B39EF),
               iconSize: 24,
@@ -404,20 +492,28 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.black,
               tabs: [
                 GButton(
-                  icon: Icons.home_outlined ,iconColor: Colors.black,
-                  text: 'Campus',textColor: Colors.black,
+                  icon: Icons.home_outlined,
+                  iconColor: Colors.black,
+                  text: 'Campus',
+                  textColor: Colors.black,
                 ),
                 GButton(
-                  icon: Icons.book_outlined,iconColor: Colors.black,
-                  text: 'Academics',textColor: Colors.black,
+                  icon: Icons.book_outlined,
+                  iconColor: Colors.black,
+                  text: 'Academics',
+                  textColor: Colors.black,
                 ),
                 GButton(
-                  icon: Icons.bed_outlined,iconColor: Colors.black,
-                  text: 'Hostel',textColor: Colors.black,
+                  icon: Icons.event,
+                  iconColor: Colors.black,
+                  text: 'Events',
+                  textColor: Colors.black,
                 ),
                 GButton(
-                  icon: Icons.food_bank_outlined,iconColor: Colors.black,
-                  text: 'Mess Menu',textColor: Colors.black,
+                  icon: Icons.food_bank_outlined,
+                  iconColor: Colors.black,
+                  text: 'Mess Menu',
+                  textColor: Colors.black,
                 ),
               ],
               selectedIndex: _selectedIndex,

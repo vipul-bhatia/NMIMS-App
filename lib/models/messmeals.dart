@@ -3,23 +3,16 @@ import 'package:flutter/material.dart';
 
 class Meals {
 
-   final String title;
- final String Description ;
+   final String date;
+ final String time;
+  final String occ;
+  final String li;
 
  const Meals(
       {
-      required this.title,
-      required this.Description,
+        required this.date,
+        required this.time,
+        required this.occ,
+        required this.li,
 });
-}
-
-
-class MealType {
-  final String mealtype;
-  final List<Meals> meals;
-
-  const MealType({
-    required this.mealtype,
-    required this.meals,
-  });
 }

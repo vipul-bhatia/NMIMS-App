@@ -1,8 +1,12 @@
+import 'package:app/models/events.dart';
+import 'package:app/models/messmeals.dart';
+import 'package:expandable/expandable.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:lottie/lottie.dart';
 import '../models/canteenmeals.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
@@ -13,7 +17,7 @@ class canteenScreen extends StatefulWidget {
 
 Future<List<CanteenMealType>> CanteenMenu() async {
   final response = await http.get(Uri.parse(
-      'https://raw.githubusercontent.com/Vipul0592bhatia/nmimsdata/master/datafiles/canteenmenu.json'));
+      'https://raw.githubusercontent.com/vipul-bhatia/nmimsdata/master/datafiles/canteenmenu.json'));
 
   List<CanteenMealType> mealtypes = [];
 
@@ -30,7 +34,11 @@ Future<List<CanteenMealType>> CanteenMenu() async {
       String cost = element['cost'];
       canteenitems.add(CanteenItem(name: name, cost: cost));
     });
-    mealtypes.add(CanteenMealType(title: "Bhel/Chats", items: canteenitems));
+    mealtypes.add(CanteenMealType(
+        imageUrl:
+            'https://as1.ftcdn.net/v2/jpg/02/72/83/70/1000_F_272837036_IvX8YZgMaUkzS0qeNY3WcM97RstiFRCO.jpg',
+        title: "Bhel/Chats",
+        items: canteenitems));
 
     //Chinese Food
     canteenitems = [];
@@ -40,7 +48,11 @@ Future<List<CanteenMealType>> CanteenMenu() async {
       String cost = element['cost'];
       canteenitems.add(CanteenItem(name: name, cost: cost));
     });
-    mealtypes.add(CanteenMealType(title: "Chinese Food", items: canteenitems));
+    mealtypes.add(CanteenMealType(
+        imageUrl:
+            'https://images.hindustantimes.com/img/2021/08/22/1600x900/34962ab0-0111-11ec-8bb0-cae8e339dabd_1629601458570.jpg',
+        title: "Chinese Food",
+        items: canteenitems));
 
 //Fast Food
     canteenitems = [];
@@ -50,7 +62,11 @@ Future<List<CanteenMealType>> CanteenMenu() async {
       String cost = element['cost'];
       canteenitems.add(CanteenItem(name: name, cost: cost));
     });
-    mealtypes.add(CanteenMealType(title: "Fast Food", items: canteenitems));
+    mealtypes.add(CanteenMealType(
+        imageUrl:
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo-_G8kQT_k7IgosQf8zlf7FdJzZTH8kzt3Q&usqp=CAU',
+        title: "Fast Food",
+        items: canteenitems));
 
 //Frankie
     canteenitems = [];
@@ -60,7 +76,11 @@ Future<List<CanteenMealType>> CanteenMenu() async {
       String cost = element['cost'];
       canteenitems.add(CanteenItem(name: name, cost: cost));
     });
-    mealtypes.add(CanteenMealType(title: "Frankie", items: canteenitems));
+    mealtypes.add(CanteenMealType(
+        imageUrl:
+            'https://cafeuppercrust.com/wp-content/uploads/2021/02/frankie_orig.jpg',
+        title: "Frankie",
+        items: canteenitems));
 
     //Fresh Juice
     canteenitems = [];
@@ -70,7 +90,11 @@ Future<List<CanteenMealType>> CanteenMenu() async {
       String cost = element['cost'];
       canteenitems.add(CanteenItem(name: name, cost: cost));
     });
-    mealtypes.add(CanteenMealType(title: "Fresh Juice", items: canteenitems));
+    mealtypes.add(CanteenMealType(
+        imageUrl:
+            'https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES.jpg',
+        title: "Fresh Juice",
+        items: canteenitems));
 
     //Grilled
     canteenitems = [];
@@ -80,7 +104,11 @@ Future<List<CanteenMealType>> CanteenMenu() async {
       String cost = element['cost'];
       canteenitems.add(CanteenItem(name: name, cost: cost));
     });
-    mealtypes.add(CanteenMealType(title: "Grilled", items: canteenitems));
+    mealtypes.add(CanteenMealType(
+        imageUrl:
+            'https://www.vegrecipesofindia.com/wp-content/uploads/2018/12/veg-grilled-sandwich-1.jpg',
+        title: "Grilled",
+        items: canteenitems));
 
     //Hot Beverages
     canteenitems = [];
@@ -90,7 +118,11 @@ Future<List<CanteenMealType>> CanteenMenu() async {
       String cost = element['cost'];
       canteenitems.add(CanteenItem(name: name, cost: cost));
     });
-    mealtypes.add(CanteenMealType(title: "Hot Beverages", items: canteenitems));
+    mealtypes.add(CanteenMealType(
+        imageUrl:
+            'https://foodrevolution.org/wp-content/uploads/iStock-1137365972-1.jpg',
+        title: "Hot Beverages",
+        items: canteenitems));
 
 //Lunch
     canteenitems = [];
@@ -100,7 +132,10 @@ Future<List<CanteenMealType>> CanteenMenu() async {
       String cost = element['cost'];
       canteenitems.add(CanteenItem(name: name, cost: cost));
     });
-    mealtypes.add(CanteenMealType(title: "Lunch", items: canteenitems));
+    mealtypes.add(CanteenMealType(
+        imageUrl: 'https://static.toiimg.com/photo/90934370.cms',
+        title: "Lunch",
+        items: canteenitems));
 
 //Majedar Lassi
     canteenitems = [];
@@ -110,7 +145,11 @@ Future<List<CanteenMealType>> CanteenMenu() async {
       String cost = element['cost'];
       canteenitems.add(CanteenItem(name: name, cost: cost));
     });
-    mealtypes.add(CanteenMealType(title: "Majedar Lassi", items: canteenitems));
+    mealtypes.add(CanteenMealType(
+        imageUrl:
+            'https://zaykarecipes.com/wp-content/uploads/2017/02/lassi-recipe.jpg',
+        title: "Mazedar Lassi",
+        items: canteenitems));
 
     //Milk Shakes
     canteenitems = [];
@@ -120,7 +159,11 @@ Future<List<CanteenMealType>> CanteenMenu() async {
       String cost = element['cost'];
       canteenitems.add(CanteenItem(name: name, cost: cost));
     });
-    mealtypes.add(CanteenMealType(title: "Milk Shakes", items: canteenitems));
+    mealtypes.add(CanteenMealType(
+        imageUrl:
+            'https://hips.hearstapps.com/hmg-prod/images/190523-vanilla-milkshake-015-horizontal-1559169412.png',
+        title: "Milk Shakes",
+        items: canteenitems));
 
     //Pizza
     canteenitems = [];
@@ -130,7 +173,11 @@ Future<List<CanteenMealType>> CanteenMenu() async {
       String cost = element['cost'];
       canteenitems.add(CanteenItem(name: name, cost: cost));
     });
-    mealtypes.add(CanteenMealType(title: "Pizza", items: canteenitems));
+    mealtypes.add(CanteenMealType(
+        imageUrl:
+            'https://static.toiimg.com/photo/msid-87930581/87930581.jpg?211826',
+        title: "Pizza",
+        items: canteenitems));
 
     //Starter Chinese
     canteenitems = [];
@@ -140,16 +187,17 @@ Future<List<CanteenMealType>> CanteenMenu() async {
       String cost = element['cost'];
       canteenitems.add(CanteenItem(name: name, cost: cost));
     });
-    mealtypes
-        .add(CanteenMealType(title: "Starter Chinese", items: canteenitems));
+    mealtypes.add(CanteenMealType(
+        imageUrl:
+            'https://images.hindustantimes.com/img/2021/08/22/1600x900/34962ab0-0111-11ec-8bb0-cae8e339dabd_1629601458570.jpg',
+        title: "Starter Chinese",
+        items: canteenitems));
 
     return mealtypes;
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
-    throw Center(
-            child: Image.asset("Assets/nointernet.jpg")
-          );
+    throw Center(child: LottieBuilder.asset('Assets/no-internet.json'));
   }
 }
 
@@ -164,280 +212,148 @@ class _canteenScreenState extends State<canteenScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 12,
-      child: FutureBuilder<List<CanteenMealType>>(
-        future: futureMenu,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return Scaffold(
-              appBar: AppBar(
-                title: const Text('Canteen'),
-                //actions: [
-                //ElevatedButton ( child: Text('Note!'), onPressed: (){
-                //openDialog();
-                //},),
-                //],
-                centerTitle: true,
-                bottom: TabBar(isScrollable: true, tabs: [
-                  Tab(text: 'Bhel/Chats'),
-                  Tab(text: 'Chinese Food'),
-                  Tab(text: 'Fast Food'),
-                  Tab(text: 'Frankie'),
-                  Tab(text: 'Fresh Juice'),
-                  Tab(text: 'Grilled'),
-                  Tab(text: 'Hot Beverages'),
-                  Tab(text: 'Lunch'),
-                  Tab(text: 'Majedar Lassi'),
-                  Tab(text: 'Milk Shakes'),
-                  Tab(text: 'Pizza'),
-                  Tab(text: 'Starter Chinese'),
-                ]),
+    return FutureBuilder<List<CanteenMealType>>(
+      future: futureMenu,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return Scaffold(
+            appBar: AppBar(
+              iconTheme: IconThemeData(color: Color(0xFF4B39EF)),
+              backgroundColor: Colors.white,
+              title: Text(
+                'Canteen',
+                style: TextStyle(
+                  fontFamily: 'Lexend Deca',
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              body: TabBarView(
-                children: [
-                  ListView.builder(
-                    itemCount: snapshot.data![0].items.length,
-                    itemBuilder: (ctx, index) => Card(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 10,
-                        ),
-                        child: Material(
-                           elevation: 20.0,
-              shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![0].items[index].name),
-                            trailing: Text(snapshot.data![0].items[index].cost),
+              actions: [],
+              elevation: 0,
+            ),
+            body: ListView.builder(
+              itemCount: snapshot.data!.length,
+              itemBuilder: ((context, index0) => SafeArea(
+                      child: GestureDetector(
+                    onTap: () {},
+                    child: Column(mainAxisSize: MainAxisSize.max, children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 8, 16, 8),
+                        child: Container(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 8,
+                                color: Color(0x230F1113),
+                                offset: Offset(0, 4),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(0),
+                                  bottomRight: Radius.circular(0),
+                                  topLeft: Radius.circular(12),
+                                  topRight: Radius.circular(12),
+                                ),
+                                child: Image.network(
+                                  snapshot.data![index0].imageUrl,
+                                  width: double.infinity,
+                                  height: 200,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16, 12, 16, 12),
+                                child: Expanded(
+                                  child: Container(
+                                    width: double.infinity,
+                                    color: Colors.white,
+                                    child: ExpandableNotifier(
+                                        initialExpanded: false,
+                                        child: ExpandablePanel(
+                                            theme: ExpandableThemeData(
+                                              headerAlignment:
+                                                  ExpandablePanelHeaderAlignment
+                                                      .center,
+                                              tapBodyToCollapse: true,
+                                            ),
+                                            header: Text(
+                                              snapshot.data![index0].title,
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            collapsed: Text(''),
+                                            expanded: Expanded(
+                                              child: SizedBox(
+                                                height: 700,
+                                                child: ListView.builder(
+                                                  itemCount: snapshot
+                                                      .data![index0]
+                                                      .items
+                                                      .length,
+                                                  itemBuilder:
+                                                      (context, index) =>
+                                                          ListTile(
+                                                    title: Text(snapshot
+                                                        .data![index0]
+                                                        .items[index]
+                                                        .name),
+                                                    trailing: Text(snapshot
+                                                        .data![index0]
+                                                        .items[index]
+                                                        .cost),
+                                                  ),
+                                                ),
+                                              ),
+                                            )
+                                            // expanded: Row(
+                                            //   children: [
+                                            //     Text(
+                                            //       snapshot.data![index].items
+                                            //           .map((e) => e.name)
+                                            //           .join('\n'),
+                                            //       style: TextStyle(fontSize: 15),
+                                            //     ),
+                                            //     Padding(padding: EdgeInsets.only(left: 20)),
+                                            //     Text(
+                                            //       snapshot.data![index].items
+                                            //           .map((e) => e.cost)
+                                            //           .join('\n'),
+                                            //       style: TextStyle(fontSize: 15),
+                                            //     ),
+                                            //   ],
+                                            // ),
+                                            )),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ),
-                    ),
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![1].items.length,
-                    itemBuilder: (ctx, index) => Card(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 10,
-                        ),
-                        child: Material(
-                                     elevation: 20.0,
-                            shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![1].items[index].name),
-                            trailing: Text(snapshot.data![1].items[index].cost),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![2].items.length,
-                    itemBuilder: (ctx, index) => Card(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 10,
-                        ),
-                        child: Material(
-                           elevation: 20.0,
-                            shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![2].items[index].name),
-                            trailing: Text(snapshot.data![2].items[index].cost),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![3].items.length,
-                    itemBuilder: (ctx, index) => Card(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 10,
-                        ),
-                        child: Material(
-                           elevation: 20.0,
-                            shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![3].items[index].name),
-                            trailing: Text(snapshot.data![3].items[index].cost),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![4].items.length,
-                    itemBuilder: (ctx, index) => Card(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 10,
-                        ),
-                        child: Material(
-                           elevation: 20.0,
-                            shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![4].items[index].name),
-                            trailing: Text(snapshot.data![4].items[index].cost),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![5].items.length,
-                    itemBuilder: (ctx, index) => Card(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 10,
-                        ),
-                        child: Material(
-                           elevation: 20.0,
-                            shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![5].items[index].name),
-                            trailing: Text(snapshot.data![5].items[index].cost),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![6].items.length,
-                    itemBuilder: (ctx, index) => Card(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 10,
-                        ),
-                        child: Material(
-                           elevation: 20.0,
-                            shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![6].items[index].name),
-                            trailing: Text(snapshot.data![6].items[index].cost),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![7].items.length,
-                    itemBuilder: (ctx, index) => Card(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 10,
-                        ),
-                        child: Material(
-                           elevation: 20.0,
-                            shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![7].items[index].name),
-                            trailing: Text(snapshot.data![7].items[index].cost),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![8].items.length,
-                    itemBuilder: (ctx, index) => Card(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 10,
-                        ),
-                        child: Material(
-                           elevation: 20.0,
-                            shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![8].items[index].name),
-                            trailing: Text(snapshot.data![8].items[index].cost),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![9].items.length,
-                    itemBuilder: (ctx, index) => Card(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 10,
-                        ),
-                        child: Material(
-                           elevation: 20.0,
-                            shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![9].items[index].name),
-                            trailing: Text(snapshot.data![9].items[index].cost),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![10].items.length,
-                    itemBuilder: (ctx, index) => Card(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 10,
-                        ),
-                        child: Material(
-                           elevation: 20.0,
-                            shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![10].items[index].name),
-                            trailing: Text(snapshot.data![10].items[index].cost),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![11].items.length,
-                    itemBuilder: (ctx, index) => Card(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 10,
-                        ),
-                        child: Material(
-                           elevation: 20.0,
-                            shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![11].items[index].name),
-                            trailing: Text(snapshot.data![11].items[index].cost),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            );
-          } else if (snapshot.hasError) {
-            return  Center(
-            child: Image.asset("Assets/nointernet.jpg")
+                      )
+                    ]),
+                  ))),
+            ),
           );
-          }
-          // By default, show a loading spinner.
-          return Center(
-            child: LoadingAnimationWidget.threeRotatingDots(color: Color(0xFF4B39EF), size: 50),
-          );
-        },
-      ),
+        } else if (snapshot.hasError) {
+          return Center(child: LottieBuilder.asset('Assets/no-internet.json'));
+        }
+        // By default, show a loading spinner.
+        return Center(
+          child: LoadingAnimationWidget.threeRotatingDots(
+              color: Color(0xFF4B39EF), size: 50),
+        );
+      },
     );
   }
 }

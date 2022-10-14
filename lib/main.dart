@@ -22,6 +22,8 @@ import '../pages/facultyDetails.dart';
 import '../pages/gallerydetails.dart';
 import '../pages/eventsDetails.dart';
 import 'pages/onboardingnew.dart';
+import '../pages/academicsImformation.dart';
+import '../pages/academics.dart';
 
 
 
@@ -34,6 +36,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'NMIMS Shirpur',
       debugShowCheckedModeBanner: false,
+  
       initialRoute: '/',
       routes: {
         '/': (context) => OnboardingScreenWidget(),
@@ -46,7 +49,7 @@ class MyApp extends StatelessWidget {
         '/about': (context) => aboutScreen(),
         '/canteen':(context) => canteenScreen(),
         '/generalStore':(context) => generalStoreScreen(),
-        '/academics':(context) => CategoriesScreen(),
+        '/academics':(context) => academicsScreen(),
         '/hostel':(context) => hostelScreen(),
         '/mess':(context) => messScreen(),
         '/campus':(context) => CampusScreen(),
@@ -54,7 +57,7 @@ class MyApp extends StatelessWidget {
         '/faculty':(context) => facultyScreen(),
         '/news':(context) => newsHome(),
         '/theatre':(context) => theatreScreen(),
-         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
+      academicsDetailScreen.routeName: (context) => academicsDetailScreen(),
           facultyDetailsScreen.routeName: (ctx) => facultyDetailsScreen(),
           galleryDetailsScreen.routeName: (ctx) => galleryDetailsScreen(),
           EventdetailsWidget.routeName: (ctx) => EventdetailsWidget(),
