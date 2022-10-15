@@ -419,35 +419,36 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             ),
             ListTile(
               leading: Icon(
-                Icons.exit_to_app_outlined,
+                Mdi.heart,
                 color: Color(0xFF4B39EF),
               ),
               title: Text(
-                'Exit',
+                'Made With Dot.',
                 style:
                     TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
               ),
               onTap: () {
-                Navigator.of(context).pop();
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Lottie.network(
+                      'https://assets10.lottiefiles.com/packages/lf20_fJ7CVd.json')));
               },
             ),
             Divider(),
            //on tap on which animation happens
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Lottie.network(
-                      'https://assets10.lottiefiles.com/packages/lf20_fJ7CVd.json')));
-              },
-              child: Center(
-                child: Text(
-                  'Made with ❤️ by Team 1',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 12,
-                  ),
-                ),
-              ),
-            ),
+            // GestureDetector(
+            //   onTap: (){
+            //     Navigator.push(context, MaterialPageRoute(builder: (context)=>Lottie.network(
+            //           'https://assets10.lottiefiles.com/packages/lf20_fJ7CVd.json')));
+            //   },
+            //   child: Center(
+            //     child: Text(
+            //       'Made with ❤️ by Team 1',
+            //       style: TextStyle(
+            //         color: Colors.black,
+            //         fontSize: 12,
+            //       ),
+            //     ),
+            //   ),
+            // ),
             // Padding(
             //   padding: EdgeInsets.all(10),
             //   child: Lottie.network('https://assets10.lottiefiles.com/packages/lf20_fJ7CVd.json')

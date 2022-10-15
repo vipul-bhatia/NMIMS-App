@@ -15,7 +15,7 @@ class facultyDetailsScreen extends StatelessWidget {
         iconTheme: IconThemeData(color: Color(0xFF4B39EF)),
   backgroundColor: Colors.white,
   title: Text(
- fd.Title,
+ fd.name,
     style: TextStyle(
           fontFamily: 'Lexend Deca',
           color: Colors.black,
@@ -39,7 +39,7 @@ class facultyDetailsScreen extends StatelessWidget {
                   child: Container(
                     color: Colors.grey,
                     child: Image.network(
-                      fd.ImageUrl,
+                      fd.profile_img,
                       width: double.infinity,
                       height: 280,
                       fit: BoxFit.cover,
@@ -51,7 +51,7 @@ class facultyDetailsScreen extends StatelessWidget {
                   child: CircleAvatar(
                     radius: 144 / 2,
                     backgroundColor: Colors.grey.shade800,
-                    backgroundImage: NetworkImage(fd.profileImage),
+                    backgroundImage: NetworkImage(fd.img_url),
                   ),
                 )
               ],
@@ -60,7 +60,7 @@ class facultyDetailsScreen extends StatelessWidget {
               height: 30,
             ),
             Text(
-              fd.Title,
+              fd.name,
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -70,7 +70,7 @@ class facultyDetailsScreen extends StatelessWidget {
               height: 15,
             ),
             Text(
-              fd.details,
+              fd.department,
               style: TextStyle(
                 fontSize: 20,
               ),
@@ -79,7 +79,7 @@ class facultyDetailsScreen extends StatelessWidget {
               height: 15,
             ),
             Text(
-              fd.sittingP,
+              fd.sitting_position,
               style: TextStyle(
                 fontSize: 20,
               ),
@@ -136,7 +136,7 @@ class facultyDetailsScreen extends StatelessWidget {
                     clipBehavior: Clip.hardEdge,
                     color: Color(0xFF4B39EF),
                     child: InkWell(
-                        onTap: () => launch('mailto: fd.email'),
+                        onTap: () => launch(fd.website),
                         child: Center(
                           child: Icon(
                             Icons.link,

@@ -69,16 +69,12 @@ class _galleryDetailsScreenState extends State<galleryDetailsScreen>
             SizedBox(
               height: 40,
             ),
-            Material(
-              elevation: 20.0,
-              shadowColor: Color(0xFF4B39EF),
-              child: Text(
-                gd.Title,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+            Text(
+              gd.Title,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ],

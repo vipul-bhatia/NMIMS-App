@@ -6,7 +6,8 @@ class Meals {
    final String date;
  final String time;
   final String occ;
-  final String li;
+  final List li;
+  final List<dynamic> evening_menu;
 
  const Meals(
       {
@@ -14,5 +15,6 @@ class Meals {
         required this.time,
         required this.occ,
         required this.li,
+        required this.evening_menu,
 });
 }

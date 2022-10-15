@@ -15,6 +15,8 @@ Future<List<academicsDetail>> academicsDetails() async {
       'https://raw.githubusercontent.com/vipul-bhatia/nmimsdata/master/datafiles/academics.json'));
 
   String title = "Academics";
+
+
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
@@ -26,10 +28,19 @@ Future<List<academicsDetail>> academicsDetails() async {
       String details = element['details'];
       String url = element['url'];
       String ImageUrl = element['ImageUrl'];
+      List<Year> Years = [];
+      List<dynamic> years = element['Years'];
+      years.forEach((element) {
+        String year = element['year'];
+        String url = element['url'];
+        Years.add(Year(year: year, url: url));
+      });
+
       academicsdetails.add(academicsDetail(
-          Title: Title, details: details, url: url, ImageUrl: ImageUrl));
+          Title: Title, details: details, url: url, ImageUrl: ImageUrl, Years: Years));
     });
     return academicsdetails;
+
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.

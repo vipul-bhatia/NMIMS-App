@@ -7,8 +7,9 @@ import 'package:lottie/lottie.dart';
 import 'dart:convert';
 import '../models/messmeals.dart';
 
-Future<List<Meals>> fatchMenu() async{
-  final response = await http.get(Uri.parse('https://raw.githubusercontent.com/aamit2267/try-act/main/data.json?token=GHSAT0AAAAAABV6VV5GMZSGGTMTN6GZCNFGY2IJA4A'));
+Future<List<Meals>> fatchMenu() async {
+  final response = await http.get(Uri.parse(
+      'https://raw.githubusercontent.com/aamit2267/try-act/main/data.json'));
 
   List<Meals> meals = [];
 
@@ -16,19 +17,36 @@ Future<List<Meals>> fatchMenu() async{
     // If the server did return a 200 OK response,
     // then parse the JSON.
     var jsonResponse = jsonDecode(response.body);
-    List<Meals> mealss  = [];
+    List<Meals> mealss = [];
 
-    //Breakfast
     List<dynamic> items = jsonResponse['meal'];
     items.forEach((element) {
       String date = element['date'];
       String time = element['time'];
       String occ = element['occ'];
-      String li = element['li'];
-      mealss.add(Meals(date: date, time: time, occ: occ, li: li));
+      List li = element['li'];
+      List<dynamic> evening_menu = [];
+      if (occ == " Evening") {
+        element['td'].forEach((key, value) {
+          li.add(key + ' - Rs ' + value);
+        });
+
+        mealss.add(Meals(
+            date: date,
+            time: time,
+            occ: occ,
+            li: li,
+            evening_menu: evening_menu));
+      } else {
+        mealss.add(Meals(
+            date: date,
+            time: time,
+            occ: occ,
+            li: li,
+            evening_menu: evening_menu));
+      }
     });
-    meals.add(Meals(date: "", time: "", occ: "", li: ""));
-    return meals;
+    return mealss;
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -67,6 +85,7 @@ Future<List<Meals>> fatchMenu() async{
 // }
   }
 }
+
 class messScreen extends StatefulWidget {
   @override
   State<messScreen> createState() => _messScreenState();
@@ -88,93 +107,117 @@ class _messScreenState extends State<messScreen> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return Scaffold(
-              appBar: AppBar(
-                backgroundColor: Colors.white,
-                elevation: 0,
-                // bottom: PreferredSize(
-                //   preferredSize: Size.fromHeight(20),
-                //   child: TabBar(
-                //       padding: EdgeInsets.all(0),
-                //       //isScrollable: true,
-                //       tabs: [
-                //         Tab(
-                //             icon: Icon(Icons.breakfast_dining,color:Color(0xFF4B39EF) ,),
-                //             child: Text(
-                //               "Breakfast",
-                //               style: TextStyle(
-                //                   fontSize: 16, color: Colors.black),
-                //             )),
-                //         Tab(icon: Icon(Icons.lunch_dining,color:Color(0xFF4B39EF)),child: Text(
-                //               "Lunch",
-                //               style: TextStyle(
-                //                   fontSize: 16, color: Colors.black),
-                //             )),
-                //         Tab(icon: Icon(Icons.dinner_dining,color:Color(0xFF4B39EF)), child: Text(
-                //               "Dinner",
-                //               style: TextStyle(
-                //                   fontSize: 16, color: Colors.black),
-                //             )),
-                //       ]),
-                // ),
-              ),
-              body: Center(child: ListView.builder(itemCount: snapshot.data!.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    child: Column(
-                      children: [
-                        // Container(
-                        //   padding: EdgeInsets.all(10),
-                        //   child: Text(
-                        //     snapshot.data![index].meals[0].date,
-                        //     style: TextStyle(
-                        //         fontSize: 20, fontWeight: FontWeight.bold),
-                        //   ),
-                        // ),
-                        // Container(
-                        //   padding: EdgeInsets.all(10),
-                        //   child: Text(
-                        //     snapshot.data![index].meals[0].time,
-                        //     style: TextStyle(
-                        //         fontSize: 20, fontWeight: FontWeight.bold),
-                        //   ),
-                        // ),
-                        // Container(
-                        //   padding: EdgeInsets.all(10),
-                        //   child: Text(
-                        //     snapshot.data![index].meals[0].occ,
-                        //     style: TextStyle(
-                        //         fontSize: 20, fontWeight: FontWeight.bold),
-                        //   ),
-                        // ),
-                        Container(
-                          padding: EdgeInsets.all(10),
-                          child: Text(
-                            snapshot.data![index].li,
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ],
+              
+              body: Column(
+                children: [
+                  Container(
+                    height: 50,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF4B39EF),
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(30),
+                        bottomRight: Radius.circular(30),
+                      ),
                     ),
-                  );
-                },
-
-              ),)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    child: Center(
+                      child: Text(
+                        'Mess Menu',
+                        style: TextStyle(
+                          fontSize: 30,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: Text(snapshot.data![0].date,style: TextStyle(fontSize: 18),),
+                  ),
+                  Center(
+                    child: Text(snapshot.data![0].time,style: TextStyle(fontSize: 18),),
+                  ),
+                  Center(
+                    child: Text(snapshot.data![0].occ,style: TextStyle(fontSize: 18),),
+                  ),
+                  Expanded(
+                    child: SizedBox(
+                      height: 10,
+                      child: ListView.builder(
+                        itemCount: snapshot.data![0].li.length,
+                        itemBuilder: (context, index) {
+                          return Card(
+                            child: ListTile(
+                              title: Text(snapshot.data![0].li[index]),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                  // Container(
+                  //     child: Text(
+                  //   snapshot.data![0].date,
+                  // )),
+                  // Container(
+                  //     child: Text(
+                  //   snapshot.data![0].time,
+                  // )),
+                  // Container(
+                  //     child: Text(
+                  //   snapshot.data![0].occ,
+                  // )),
+                ],
+              ),
+              // body: Center(
+              //   child: ListView.builder(
+              //     itemCount: snapshot.data!.length,
+              //     itemBuilder: (context, index) {
+              //       return Container(
+              //         child: Column(
+              //           children: [
+              //             Container(
+              //               padding: EdgeInsets.all(10),
+              //               child: Text(
+              //                 snapshot.data![index].date,
+              //                 style: TextStyle(
+              //                     fontSize: 20, fontWeight: FontWeight.bold),
+              //               ),
+              //             ),
+              //             Container(
+              //               padding: EdgeInsets.all(10),
+              //               child: Text(
+              //                 snapshot.data![index].time,
+              //                 style: TextStyle(
+              //                     fontSize: 20, fontWeight: FontWeight.bold),
+              //               ),
+              //             ),
+              //             Container(
+              //               padding: EdgeInsets.all(10),
+              //               child: Text(
+              //                 snapshot.data![index].occ,
+              //                 style: TextStyle(
+              //                     fontSize: 20, fontWeight: FontWeight.bold),
+              //               ),
+              //             ),
+              // ListView.builder(
+              //     itemCount: snapshot.data![index].li.length,
+              //     itemBuilder: (context, index1) {
+              //       return Container(
+              //         padding: EdgeInsets.all(10),
+              //         child: Text(
+              //           snapshot.data![index].li[index1],
+              //           style: TextStyle(
+              //               fontSize: 20,
+              //               fontWeight: FontWeight.bold),
+              //         ),
+              //       );
+              //     })
+              //           ],
+              //         ),
+              //       );
+              //     },
+              //   ),
+              // )
 
               // body: TabBarView(
               //   children: [
@@ -272,7 +315,8 @@ class _messScreenState extends State<messScreen> {
               // ),
             );
           } else if (snapshot.hasError) {
-            return Center(child:LottieBuilder.asset('Assets/no-internet.json'));
+            return Center(
+                child: LottieBuilder.asset('Assets/no-internet.json'));
           }
           // By default, show a loading spinner.
           return LoadingAnimationWidget.threeRotatingDots(

@@ -23,15 +23,22 @@ class _feedbackScreenState extends State<feedbackScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          actions: [
-            IconButton(onPressed: () async {
-              final prefs = await SharedPreferences.getInstance();
-                              prefs.setBool('onboarding', false);
-            }, icon: Icon(Icons.logout)),
-          ],
-          title: Text(widget.title),
+        appBar:  AppBar(
+         iconTheme: IconThemeData(color: Color(0xFF4B39EF)),
+  backgroundColor: Colors.white,
+  title: Text(
+    'Feedback',
+    style: TextStyle(
+          fontFamily: 'Lexend Deca',
+          color: Colors.black,
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
         ),
+  ),
+  actions: [],
+
+  elevation: 0,
+),
         body: Form(
           key: formKey,
           //autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -78,8 +85,8 @@ class _feedbackScreenState extends State<feedbackScreen> {
           border: OutlineInputBorder(),
         ),
         validator: (value) {
-          if (value!.length < 2) {
-            return 'Password must be at least 7 characters long';
+          if (value!.length < 3) {
+            return 'Course must be at least 3 characters long';
           } else {
             return null;
           }
@@ -94,14 +101,12 @@ class _feedbackScreenState extends State<feedbackScreen> {
         ),
         validator: (value) {
           if (value!.length < 7) {
-            return 'Password must be at least 7 characters long';
+            return 'Feedback must be at least 7 characters long';
           } else {
             return null;
           }
         },
         onSaved: (value) => setState(() => password = value!),
-        keyboardType: TextInputType.visiblePassword,
-        obscureText: true,
       );
 
   Widget buildSubmit() => Builder(
@@ -123,7 +128,12 @@ class _feedbackScreenState extends State<feedbackScreen> {
                 ),
                 backgroundColor: Colors.green,
               );
-              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('Your Response has been recorded, Thank You!'),
+                  duration: Duration(seconds: 5),
+                )
+              );
             }
           },
         ),

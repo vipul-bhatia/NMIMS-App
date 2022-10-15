@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:lottie/lottie.dart';
@@ -26,7 +28,7 @@ Future<List<ListType>> fatchcallnumber() async {
       String number = element['number'];
       listtypess.add(callNumber(name: name, number: number));
     });
-    listtypes.add(ListType(listtype: "hostel", numbers: listtypess));
+    listtypes.add(ListType(listtype: "Boys Hostel", numbers: listtypess));
 
     //Girls Hostel
     listtypess = [];
@@ -39,16 +41,7 @@ Future<List<ListType>> fatchcallnumber() async {
     });
     listtypes.add(ListType(listtype: "Girls Hostel", numbers: listtypess));
 
-    //Doctors
-    listtypess = [];
-    items = jsonResponse['Doctors'];
-    items.forEach((element) {
-      String listtype = element['listtype'];
-      String name = element['name'];
-      String number = element['number'];
-      listtypess.add(callNumber(name: name, number: number));
-    });
-    listtypes.add(ListType(listtype: "Doctors", numbers: listtypess));
+
 
     //Travellers
     listtypess = [];
@@ -108,9 +101,7 @@ Future<List<ListType>> fatchcallnumber() async {
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
-    throw  Center(
-            child: LottieBuilder.asset('Assets/no-internet.json')
-          );
+    throw Center(child: LottieBuilder.asset('Assets/no-internet.json'));
   }
   return listtypes;
 }
@@ -125,265 +116,350 @@ class ContactScreen extends StatefulWidget {
 class _ContactScreenState extends State<ContactScreen> {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 8,
-      child: FutureBuilder<List<ListType>>(
-        future: fatchcallnumber(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return Scaffold(
-              appBar: AppBar(
-                 iconTheme: IconThemeData(color: Color(0xFF4B39EF)),
-                backgroundColor: Colors.white,
-               title: Text(
-    'Contacts',
-    style: TextStyle(
-          fontFamily: 'Lexend Deca',
-          color: Colors.black,
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-        ),
-  ),
-  elevation: 0,
-                bottom: TabBar(
-                 labelColor: Colors.black,
-                 indicatorColor: Color(0xFF4B39EF),
-                  isScrollable: true,
-                  tabs: [
-                    Tab(
-                      text: "Boys Hostel",
-                    ),
-                    Tab(
-                      text: "Girls Hostel",
-                    ),
-                    Tab(
-                      text: "Doctors",
-                    ),
-                    Tab(
-                      text: "Travellers",
-                    ),
-                    Tab(
-                      text: "Top Level Managment",
-                    ),
-                    Tab(
-                      text: "Others",
-                    ),
-                    Tab(
-                      text: "Gym Trainer",
-                    ),
-                    Tab(
-                      text: "Yoga Instructor",
-                    ),
-                  ],
+    return FutureBuilder<List<ListType>>(
+      future: fatchcallnumber(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return Scaffold(
+            appBar: AppBar(
+              iconTheme: IconThemeData(color: Color(0xFF4B39EF)),
+              backgroundColor: Colors.white,
+              title: Text(
+                'Contacts',
+                style: TextStyle(
+                  fontFamily: 'Lexend Deca',
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              body: TabBarView(
-                children: [
-                  ListView.builder(
-                    itemCount: snapshot.data![0].numbers.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Material(
-                          elevation: 20.0,
-                          shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![0].numbers[index].name),
-                            subtitle:
-                                Text(snapshot.data![0].numbers[index].number),
-                            trailing: IconButton(
-                              icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
-                              onPressed: () {
-                                 launch(
-                                    "tel:${snapshot.data![0].numbers[index].number}");
-                               // launch(
-                                 //   "tel:${snapshot.data![0].numbers[index].number}");
-                              },
+              elevation: 0,
+              // bottom: TabBar(
+              //  labelColor: Colors.black,
+              //  indicatorColor: Color(0xFF4B39EF),
+              //   isScrollable: true,
+              //   tabs: [
+              //     Tab(
+              //       text: "Boys Hostel",
+              //     ),
+              //     Tab(
+              //       text: "Girls Hostel",
+              //     ),
+              //     Tab(
+              //       text: "Doctors",
+              //     ),
+              //     Tab(
+              //       text: "Travellers",
+              //     ),
+              //     Tab(
+              //       text: "Top Level Managment",
+              //     ),
+              //     Tab(
+              //       text: "Others",
+              //     ),
+              //     Tab(
+              //       text: "Gym Trainer",
+              //     ),
+              //     Tab(
+              //       text: "Yoga Instructor",
+              //     ),
+              //   ],
+              // ),
+            ),
+            body: ListView.builder(
+              itemCount: snapshot.data!.length,
+              itemBuilder: (context, index) {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        snapshot.data![index].listtype,
+                        style: TextStyle(
+                          fontFamily: 'Lexend Deca',
+                          color: Colors.black,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: snapshot.data![index].numbers.length,
+                      itemBuilder: (context, index2) {
+                        return ListTile(
+                          onTap: () {
+                          Uri.parse(
+                                snapshot.data![index].numbers[index2].number);
+                          },
+                          title: Text(
+                            snapshot.data![index].numbers[index2].name,
+                            style: TextStyle(
+                              fontFamily: 'Lexend Deca',
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
-                        ),
-                      );
-                    },
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![1].numbers.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Material(
-                          elevation: 20.0,
-                          shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![1].numbers[index].name),
-                            subtitle:
-                                Text(snapshot.data![1].numbers[index].number),
-                            trailing: IconButton(
-                              icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
-                              onPressed: () {
-                                launch(
-                                    "tel:${snapshot.data![1].numbers[index].number}");
-                              },
+                          subtitle: Text(
+                            snapshot.data![index].numbers[index2].number,
+                            style: TextStyle(
+                              fontFamily: 'Lexend Deca',
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
-                        ),
-                      );
-                    },
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![2].numbers.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Material(
-                          elevation: 20.0,
-                          shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![2].numbers[index].name),
-                            subtitle:
-                                Text(snapshot.data![2].numbers[index].number),
-                            trailing: IconButton(
-                              icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
-                              onPressed: () {
-                                launch(
-                                    "tel:${snapshot.data![2].numbers[index].number}");
-                              },
+                          trailing: IconButton(
+                            onPressed: () {
+                              //launch phone and email
+                              launch(
+                                  "tel:${snapshot.data![index].numbers[index2].number}");
+                              // Uri.parse(
+                              //     snapshot.data![index].numbers[index2].number);
+                            },
+                            icon: Icon(
+                              Icons.call,
+                              color: Color(0xFF4B39EF),
                             ),
+                            color: Color(0xFF4B39EF),
                           ),
-                        ),
-                      );
-                    },
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![3].numbers.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Material(
-                          elevation: 20.0,
-                          shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![3].numbers[index].name),
-                            subtitle:
-                                Text(snapshot.data![3].numbers[index].number),
-                            trailing: IconButton(
-                              icon: Icon(Icons.call,color:Color(0xFF4B39EF)),
-                              onPressed: () {
-                                launch(
-                                    "tel:${snapshot.data![3].numbers[index].number}");
-                              },
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![4].numbers.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Material(
-                          elevation: 20.0,
-                          shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![4].numbers[index].name),
-                            subtitle:
-                                Text(snapshot.data![4].numbers[index].number),
-                            trailing: IconButton(
-                              icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
-                              onPressed: () {
-                                launch(
-                                    "tel:${snapshot.data![4].numbers[index].number}");
-                              },
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![5].numbers.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Material(
-                          elevation: 20.0,
-                          shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![5].numbers[index].name),
-                            subtitle:
-                                Text(snapshot.data![5].numbers[index].number),
-                            trailing: IconButton(
-                              icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
-                              onPressed: () {
-                                launch(
-                                    "tel:${snapshot.data![5].numbers[index].number}");
-                              },
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![6].numbers.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Material(
-                          elevation: 20.0,
-                          shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![6].numbers[index].name),
-                            subtitle:
-                                Text(snapshot.data![6].numbers[index].number),
-                            trailing: IconButton(
-                              icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
-                              onPressed: () {
-                                launch(
-                                    "tel:${snapshot.data![6].numbers[index].number}");
-                              },
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                  ListView.builder(
-                    itemCount: snapshot.data![7].numbers.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Material(
-                          elevation: 20.0,
-                          shadowColor: Colors.blue,
-                          child: ListTile(
-                            title: Text(snapshot.data![7].numbers[index].name),
-                            subtitle:
-                                Text(snapshot.data![7].numbers[index].number),
-                            trailing: IconButton(
-                              icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
-                              onPressed: () {
-                                launch(
-                                    "tel:${snapshot.data![7].numbers[index].number}");
-                              },
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ],
-              ),
-            );
-          } else if (snapshot.hasError) {
-            return  Center(
-            child: LottieBuilder.asset('Assets/no-internet.json')
+                        );
+                      },
+                    ),
+                  ],
+                );
+              },
+            ),
+            // body: Column(
+            //   crossAxisAlignment: CrossAxisAlignment.start,
+            //   children: [
+            //     Padding(
+            //       padding: EdgeInsets.fromLTRB(10, 20, 0, 10),
+            //       child: Text(
+            //         'Boys Hostel',
+            //         style: TextStyle(
+            //           fontFamily: 'Lexend Deca',
+            //           color: Colors.black,
+            //           fontSize: 30,
+            //           fontWeight: FontWeight.bold,
+            //         ),
+            //       ),
+            //     ),
+            //     Expanded(
+            //       child: ListView.builder(
+            //         itemCount: snapshot.data![0].numbers.length,
+            //         itemBuilder: (context, index) {
+            //           return Padding(
+            //             padding: const EdgeInsets.all(3.0),
+            //             child: ListTile(
+            //               title: Text(snapshot.data![0].numbers[index].name),
+            //               subtitle:
+            //                   Text(snapshot.data![0].numbers[index].number),
+            //               trailing: IconButton(
+            //                 icon: Icon(
+            //                   Icons.call,
+            //                   color: Color(0xFF4B39EF),
+            //                 ),
+            //                 onPressed: () {
+            //                   launch(
+            //                       "tel:${snapshot.data![0].numbers[index].number}");
+            //                   // launch(
+            //                   //   "tel:${snapshot.data![0].numbers[index].number}");
+            //                 },
+            //               ),
+            //             ),
+            //           );
+            //         },
+            //       ),
+            //     ),
+            //   ],
+            // ),
+
+            // body: TabBarView(
+            //   children: [
+
+            //     ListView.builder(
+            //       itemCount: snapshot.data![1].numbers.length,
+            //       itemBuilder: (context, index) {
+            //         return Padding(
+            //           padding: const EdgeInsets.all(8.0),
+            //           child: Material(
+            //             elevation: 20.0,
+            //             shadowColor: Colors.blue,
+            //             child: ListTile(
+            //               title: Text(snapshot.data![1].numbers[index].name),
+            //               subtitle:
+            //                   Text(snapshot.data![1].numbers[index].number),
+            //               trailing: IconButton(
+            //                 icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
+            //                 onPressed: () {
+            //                   launch(
+            //                       "tel:${snapshot.data![1].numbers[index].number}");
+            //                 },
+            //               ),
+            //             ),
+            //           ),
+            //         );
+            //       },
+            //     ),
+            //     ListView.builder(
+            //       itemCount: snapshot.data![2].numbers.length,
+            //       itemBuilder: (context, index) {
+            //         return Padding(
+            //           padding: const EdgeInsets.all(8.0),
+            //           child: Material(
+            //             elevation: 20.0,
+            //             shadowColor: Colors.blue,
+            //             child: ListTile(
+            //               title: Text(snapshot.data![2].numbers[index].name),
+            //               subtitle:
+            //                   Text(snapshot.data![2].numbers[index].number),
+            //               trailing: IconButton(
+            //                 icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
+            //                 onPressed: () {
+            //                   launch(
+            //                       "tel:${snapshot.data![2].numbers[index].number}");
+            //                 },
+            //               ),
+            //             ),
+            //           ),
+            //         );
+            //       },
+            //     ),
+            //     ListView.builder(
+            //       itemCount: snapshot.data![3].numbers.length,
+            //       itemBuilder: (context, index) {
+            //         return Padding(
+            //           padding: const EdgeInsets.all(8.0),
+            //           child: Material(
+            //             elevation: 20.0,
+            //             shadowColor: Colors.blue,
+            //             child: ListTile(
+            //               title: Text(snapshot.data![3].numbers[index].name),
+            //               subtitle:
+            //                   Text(snapshot.data![3].numbers[index].number),
+            //               trailing: IconButton(
+            //                 icon: Icon(Icons.call,color:Color(0xFF4B39EF)),
+            //                 onPressed: () {
+            //                   launch(
+            //                       "tel:${snapshot.data![3].numbers[index].number}");
+            //                 },
+            //               ),
+            //             ),
+            //           ),
+            //         );
+            //       },
+            //     ),
+            //     ListView.builder(
+            //       itemCount: snapshot.data![4].numbers.length,
+            //       itemBuilder: (context, index) {
+            //         return Padding(
+            //           padding: const EdgeInsets.all(8.0),
+            //           child: Material(
+            //             elevation: 20.0,
+            //             shadowColor: Colors.blue,
+            //             child: ListTile(
+            //               title: Text(snapshot.data![4].numbers[index].name),
+            //               subtitle:
+            //                   Text(snapshot.data![4].numbers[index].number),
+            //               trailing: IconButton(
+            //                 icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
+            //                 onPressed: () {
+            //                   launch(
+            //                       "tel:${snapshot.data![4].numbers[index].number}");
+            //                 },
+            //               ),
+            //             ),
+            //           ),
+            //         );
+            //       },
+            //     ),
+            //     ListView.builder(
+            //       itemCount: snapshot.data![5].numbers.length,
+            //       itemBuilder: (context, index) {
+            //         return Padding(
+            //           padding: const EdgeInsets.all(8.0),
+            //           child: Material(
+            //             elevation: 20.0,
+            //             shadowColor: Colors.blue,
+            //             child: ListTile(
+            //               title: Text(snapshot.data![5].numbers[index].name),
+            //               subtitle:
+            //                   Text(snapshot.data![5].numbers[index].number),
+            //               trailing: IconButton(
+            //                 icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
+            //                 onPressed: () {
+            //                   launch(
+            //                       "tel:${snapshot.data![5].numbers[index].number}");
+            //                 },
+            //               ),
+            //             ),
+            //           ),
+            //         );
+            //       },
+            //     ),
+            //     ListView.builder(
+            //       itemCount: snapshot.data![6].numbers.length,
+            //       itemBuilder: (context, index) {
+            //         return Padding(
+            //           padding: const EdgeInsets.all(8.0),
+            //           child: Material(
+            //             elevation: 20.0,
+            //             shadowColor: Colors.blue,
+            //             child: ListTile(
+            //               title: Text(snapshot.data![6].numbers[index].name),
+            //               subtitle:
+            //                   Text(snapshot.data![6].numbers[index].number),
+            //               trailing: IconButton(
+            //                 icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
+            //                 onPressed: () {
+            //                   launch(
+            //                       "tel:${snapshot.data![6].numbers[index].number}");
+            //                 },
+            //               ),
+            //             ),
+            //           ),
+            //         );
+            //       },
+            //     ),
+            //     ListView.builder(
+            //       itemCount: snapshot.data![7].numbers.length,
+            //       itemBuilder: (context, index) {
+            //         return Padding(
+            //           padding: const EdgeInsets.all(8.0),
+            //           child: Material(
+            //             elevation: 20.0,
+            //             shadowColor: Colors.blue,
+            //             child: ListTile(
+            //               title: Text(snapshot.data![7].numbers[index].name),
+            //               subtitle:
+            //                   Text(snapshot.data![7].numbers[index].number),
+            //               trailing: IconButton(
+            //                 icon: Icon(Icons.call,color: Color(0xFF4B39EF),),
+            //                 onPressed: () {
+            //                   launch(
+            //                       "tel:${snapshot.data![7].numbers[index].number}");
+            //                 },
+            //               ),
+            //             ),
+            //           ),
+            //         );
+            //       },
+            //     ),
+            //   ],
+            // ),
           );
-          }
-          return Center(child: LoadingAnimationWidget.threeRotatingDots(color: Color(0xFF4B39EF), size: 50),);
-        },
-      ),
+        } else if (snapshot.hasError) {
+          return Center(child: LottieBuilder.asset('Assets/no-internet.json'));
+        }
+        return Center(
+          child: LoadingAnimationWidget.threeRotatingDots(
+              color: Color(0xFF4B39EF), size: 50),
+        );
+      },
     );
   }
 }

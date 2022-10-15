@@ -10,7 +10,7 @@ import '../models/faculty.dart';
 
 Future<List<FacultyPlace>> fatchMenu() async {
   final response = await http.get(Uri.parse(
-      'https://raw.githubusercontent.com/vipul-bhatia/nmimsdata/master/datafiles/faculties.json'));
+      'https://raw.githubusercontent.com/VCCASH/cc-data/dev/data/faculties.json'));
 
   List<FacultyPlace> FacultyPlaces = [];
 
@@ -23,31 +23,25 @@ Future<List<FacultyPlace>> fatchMenu() async {
     //A Wing
     List<dynamic> items = jsonResponse['A Wing'];
     items.forEach((element) {
-      String Title = element['Title'];
-      String details = element['details'];
-      String ImageUrl = element['ImageUrl'];
-      String profileImage = element['profileImage'];
-      String number = element['number'];
-      String sittingP = element['sittingP'];
-      String linkedin = element['linkedin'];
+      String profile_img = element['profile_img'];
+      String img_url = element['img_url'];
+      String name = element['name'];
+      String department = element['department'];
+      String sitting_position = element['sitting_position'];
       String email = element['email'];
-      String twitter = element['twitter'];
-      String phone = element['phone'];
+      String linkedin = element['linkedin'];
+      String website = element['website'];
       String about = element['about'];
-      String qualifications = element['qualifications'];
       faculties.add(Faculties(
-          Title: Title,
-          details: details,
-          ImageUrl: ImageUrl,
-          profileImage: profileImage,
-          number: number,
-          sittingP: sittingP,
-          linkedin: linkedin,
+        profile_img: profile_img,
+          img_url: img_url,
+          name: name,
+          department: department,
+          sitting_position: sitting_position,
           email: email,
-          twitter: twitter,
-          phone: phone,
-          about: about,
-          qualifications: qualifications));
+          linkedin: linkedin,
+          website: website,
+          about: about));
     });
     FacultyPlaces.add(FacultyPlace(faculties: faculties, place: 'A Wing'));
 
@@ -55,31 +49,25 @@ Future<List<FacultyPlace>> fatchMenu() async {
     faculties = [];
     items = jsonResponse['B Wing'];
     items.forEach((element) {
-      String Title = element['Title'];
-      String details = element['details'];
-      String ImageUrl = element['ImageUrl'];
-      String profileImage = element['profileImage'];
-      String number = element['number'];
-      String sittingP = element['sittingP'];
-      String linkedin = element['linkedin'];
+       String profile_img = element['profile_img'];
+      String img_url = element['img_url'];
+      String name = element['name'];
+      String department = element['department'];
+      String sitting_position = element['sitting_position'];
       String email = element['email'];
-      String twitter = element['twitter'];
-      String phone = element['phone'];
+      String linkedin = element['linkedin'];
+      String website = element['website'];
       String about = element['about'];
-      String qualifications = element['qualifications'];
       faculties.add(Faculties(
-          Title: Title,
-          details: details,
-          ImageUrl: ImageUrl,
-          profileImage: profileImage,
-          number: number,
-          sittingP: sittingP,
-          linkedin: linkedin,
+        profile_img: profile_img,
+          img_url: img_url,
+          name: name,
+          department: department,
+          sitting_position: sitting_position,
           email: email,
-          twitter: twitter,
-          phone: phone,
-          about: about,
-          qualifications: qualifications));
+          linkedin: linkedin,
+          website: website,
+          about: about));
     });
     FacultyPlaces.add(FacultyPlace(faculties: faculties, place: 'B Wing'));
 
@@ -87,31 +75,25 @@ Future<List<FacultyPlace>> fatchMenu() async {
     faculties = [];
     items = jsonResponse['C Wing'];
     items.forEach((element) {
-      String Title = element['Title'];
-      String details = element['details'];
-      String ImageUrl = element['ImageUrl'];
-      String profileImage = element['profileImage'];
-      String number = element['number'];
-      String sittingP = element['sittingP'];
-      String linkedin = element['linkedin'];
+       String profile_img = element['profile_img'];
+      String img_url = element['img_url'];
+      String name = element['name'];
+      String department = element['department'];
+      String sitting_position = element['sitting_position'];
       String email = element['email'];
-      String twitter = element['twitter'];
-      String phone = element['phone'];
+      String linkedin = element['linkedin'];
+      String website = element['website'];
       String about = element['about'];
-      String qualifications = element['qualifications'];
       faculties.add(Faculties(
-          Title: Title,
-          details: details,
-          ImageUrl: ImageUrl,
-          profileImage: profileImage,
-          number: number,
-          sittingP: sittingP,
-          linkedin: linkedin,
+        profile_img: profile_img,
+          img_url: img_url,
+          name: name,
+          department: department,
+          sitting_position: sitting_position,
           email: email,
-          twitter: twitter,
-          phone: phone,
-          about: about,
-          qualifications: qualifications));
+          linkedin: linkedin,
+          website: website,
+          about: about));
     });
     FacultyPlaces.add(FacultyPlace(faculties: faculties, place: 'C Wing'));
 
@@ -119,31 +101,25 @@ Future<List<FacultyPlace>> fatchMenu() async {
     faculties = [];
     items = jsonResponse['D Wing'];
     items.forEach((element) {
-      String Title = element['Title'];
-      String details = element['details'];
-      String ImageUrl = element['ImageUrl'];
-      String profileImage = element['profileImage'];
-      String number = element['number'];
-      String sittingP = element['sittingP'];
-      String linkedin = element['linkedin'];
+      String profile_img = element['profile_img'];
+      String img_url = element['img_url'];
+      String name = element['name'];
+      String department = element['department'];
+      String sitting_position = element['sitting_position'];
       String email = element['email'];
-      String twitter = element['twitter'];
-      String phone = element['phone'];
+      String linkedin = element['linkedin'];
+      String website = element['website'];
       String about = element['about'];
-      String qualifications = element['qualifications'];
       faculties.add(Faculties(
-          Title: Title,
-          details: details,
-          ImageUrl: ImageUrl,
-          profileImage: profileImage,
-          number: number,
-          sittingP: sittingP,
-          linkedin: linkedin,
+        profile_img: profile_img,
+          img_url: img_url,
+          name: name,
+          department: department,
+          sitting_position: sitting_position,
           email: email,
-          twitter: twitter,
-          phone: phone,
-          about: about,
-          qualifications: qualifications));
+          linkedin: linkedin,
+          website: website,
+          about: about));
     });
     FacultyPlaces.add(FacultyPlace(faculties: faculties, place: 'D Wing'));
     return FacultyPlaces;
@@ -240,13 +216,13 @@ class _facultyScreenState extends State<facultyScreen> {
                     RefreshIndicator(
                       onRefresh: () => futureMenu,
                       child: ListView.builder(
-                        itemCount: snapshot.data!.length,
+                        itemCount: snapshot.data![0].faculties.length,
                         itemBuilder: (context, index) {
                           return SafeArea(
                             child: GestureDetector(
                               onTap: () {
                                 selectFaculty(context,
-                                    snapshot.data![index].faculties[index]);
+                                    snapshot.data![0].faculties[index]);
                               },
                               child: Align(
                                 alignment: AlignmentDirectional(0, 0),
@@ -284,7 +260,7 @@ class _facultyScreenState extends State<facultyScreen> {
                                                   backgroundColor:
                                                       Colors.transparent,
                                                   backgroundImage: NetworkImage(
-                                                     snapshot.data![index].faculties[index].ImageUrl),
+                                                     snapshot.data![0].faculties[index].img_url),
                                                   radius: 45,
                                                 ),
                                               ),
@@ -309,7 +285,7 @@ class _facultyScreenState extends State<facultyScreen> {
                                                                     0, 4, 0, 0),
                                                         child: Text(
                                                           snapshot.hasData
-                                                              ? snapshot.data![index].faculties[index].Title
+                                                              ? snapshot.data![0].faculties[index].name
                                                               : 'Loading...',
                                                           style: TextStyle(
                                                             fontFamily:
@@ -328,7 +304,9 @@ class _facultyScreenState extends State<facultyScreen> {
                                                                 .fromSTEB(
                                                                     0, 4, 0, 0),
                                                         child: Text(
-                                                          ('Assistant Proffesor'),
+                                                          snapshot.hasData
+                                                              ? snapshot.data![0].faculties[index].department
+                                                              : 'Loading...',
                                                           style: TextStyle(
                                                             fontFamily:
                                                                 'Lexend Deca',
@@ -347,7 +325,209 @@ class _facultyScreenState extends State<facultyScreen> {
                                                                     0, 4, 0, 0),
                                                         child: Text(
                                                           snapshot.hasData
-                                                              ?snapshot.data![index].faculties[index].sittingP
+                                                              ?snapshot.data![0].faculties[index].sitting_position
+                                                              : 'Loading...',
+                                                          style: TextStyle(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            color: Color(
+                                                                0xFF57636C),
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  12, 0, 16, 8),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Card(
+                                                clipBehavior:
+                                                    Clip.antiAliasWithSaveLayer,
+                                                color: Color(0xFFF1F4F8),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(40),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(8, 8, 8, 8),
+                                                  child: Icon(
+                                                    Icons.access_time_rounded,
+                                                    color: Color(0xFF4B39EF),
+                                                    size: 20,
+                                                  ),
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(12, 0, 0, 0),
+                                                  child: Text(
+                                                    '10:00AM-05:00PM | Mon-Sat',
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      color: Color(0xFF4B39EF),
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(12, 0, 0, 0),
+                                                child: IconButton(
+                                                  onPressed: () {
+                                                    selectFaculty(context,
+                                    snapshot.data![0].faculties[index]);
+                                                  },
+                                                  icon: Icon(
+                                                      Icons
+                                                          .arrow_forward_ios_rounded,
+                                                      color: Color(0xFF4B39EF),
+                                                      size: 20),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    RefreshIndicator(
+                      onRefresh: () => futureMenu,
+                      child: ListView.builder(
+                        itemCount: snapshot.data![1].faculties.length,
+                        itemBuilder: (context, index2) {
+                          return SafeArea(
+                            child: GestureDetector(
+                              onTap:  () {
+                                selectFaculty(context, snapshot.data![1]
+                                    .faculties[index2]);
+                              },
+                              child: Align(
+                                alignment: AlignmentDirectional(0, 0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16, 8, 16, 12),
+                                  child: Container(
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 4,
+                                          color: Color(0x2B202529),
+                                          offset: Offset(0, 2),
+                                        )
+                                      ],
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  8, 0, 0, 0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              //cirecle avatar
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(8, 8, 8, 8),
+                                                child: CircleAvatar(
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  backgroundImage: NetworkImage(
+                                                   snapshot.data![1].faculties[index2].img_url),
+                                                  radius: 45,
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(8, 4, 0, 4),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0, 4, 0, 0),
+                                                        child: Text(
+                                                          snapshot.hasData
+                                                              ? snapshot.data![1].faculties[index2].name
+                                                              : 'Loading...',
+                                                          style: TextStyle(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            color: Color(
+                                                                0xFF101213),
+                                                            fontSize: 18,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0, 4, 0, 0),
+                                                        child: Text(
+                                                          snapshot.hasData
+                                                              ? snapshot.data![1].faculties[index2].department
+                                                              : 'Loading...',
+                                                          style: TextStyle(
+                                                            fontFamily:
+                                                                'Lexend Deca',
+                                                            color: Color(
+                                                                0xFF101213),
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0, 4, 0, 0),
+                                                        child: Text(
+                                                          snapshot.hasData
+                                                              ? snapshot.data![1].faculties[index2].sitting_position
                                                               : 'Loading...',
                                                           style: TextStyle(
                                                             fontFamily:
@@ -416,8 +596,8 @@ class _facultyScreenState extends State<facultyScreen> {
                                                   onPressed: () {
                                                     selectFaculty(
                                                         context,
-                                                        snapshot.data![index]
-                                                            .faculties[index]);
+                                                        snapshot.data![1]
+                                                            .faculties[index2]);
                                                   },
                                                   icon: Icon(
                                                       Icons
@@ -442,215 +622,13 @@ class _facultyScreenState extends State<facultyScreen> {
                     RefreshIndicator(
                       onRefresh: () => futureMenu,
                       child: ListView.builder(
-                        itemCount: snapshot.data!.length,
-                        itemBuilder: (context, index) {
+                        itemCount: snapshot.data![2].faculties.length,
+                        itemBuilder: (context, index3) {
                           return SafeArea(
                             child: GestureDetector(
                               onTap:  () {
-                                selectFaculty(context, snapshot.data![index]
-                                    .faculties[index]);
-                              },
-                              child: Align(
-                                alignment: AlignmentDirectional(0, 0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      16, 8, 16, 12),
-                                  child: Container(
-                                    width: double.infinity,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          blurRadius: 4,
-                                          color: Color(0x2B202529),
-                                          offset: Offset(0, 2),
-                                        )
-                                      ],
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  8, 0, 0, 0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              //cirecle avatar
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(8, 8, 8, 8),
-                                                child: CircleAvatar(
-                                                  backgroundColor:
-                                                      Colors.transparent,
-                                                  backgroundImage: NetworkImage(
-                                                   snapshot.data![index].faculties[index].ImageUrl),
-                                                  radius: 45,
-                                                ),
-                                              ),
-                                              Expanded(
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(8, 4, 0, 4),
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0, 4, 0, 0),
-                                                        child: Text(
-                                                          snapshot.hasData
-                                                              ? snapshot.data![index].faculties[index].Title
-                                                              : 'Loading...',
-                                                          style: TextStyle(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            color: Color(
-                                                                0xFF101213),
-                                                            fontSize: 18,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0, 4, 0, 0),
-                                                        child: Text(
-                                                          ('Assistant Proffesor'),
-                                                          style: TextStyle(
-                                                            fontFamily:
-                                                                'Lexend Deca',
-                                                            color: Color(
-                                                                0xFF101213),
-                                                            fontSize: 14,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0, 4, 0, 0),
-                                                        child: Text(
-                                                          snapshot.hasData
-                                                              ? snapshot.data![index].faculties[index].sittingP
-                                                              : 'Loading...',
-                                                          style: TextStyle(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            color: Color(
-                                                                0xFF57636C),
-                                                            fontSize: 14,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .normal,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  12, 0, 16, 8),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Card(
-                                                clipBehavior:
-                                                    Clip.antiAliasWithSaveLayer,
-                                                color: Color(0xFFF1F4F8),
-                                                shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(40),
-                                                ),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(8, 8, 8, 8),
-                                                  child: Icon(
-                                                    Icons.access_time_rounded,
-                                                    color: Color(0xFF4B39EF),
-                                                    size: 20,
-                                                  ),
-                                                ),
-                                              ),
-                                              Expanded(
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(12, 0, 0, 0),
-                                                  child: Text(
-                                                    '10:00AM-05:00PM | Mon-Sat',
-                                                    style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      color: Color(0xFF4B39EF),
-                                                      fontSize: 14,
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(12, 0, 0, 0),
-                                                child: IconButton(
-                                                  onPressed: () {
-                                                    selectFaculty(
-                                                        context,
-                                                        snapshot.data![index]
-                                                            .faculties[index]);
-                                                  },
-                                                  icon: Icon(
-                                                      Icons
-                                                          .arrow_forward_ios_rounded,
-                                                      color: Color(0xFF4B39EF),
-                                                      size: 20),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                    RefreshIndicator(
-                      onRefresh: () => futureMenu,
-                      child: ListView.builder(
-                        itemCount: snapshot.data!.length,
-                        itemBuilder: (context, index) {
-                          return SafeArea(
-                            child: GestureDetector(
-                              onTap:  () {
-                                selectFaculty(context, snapshot.data![index]
-                                    .faculties[index]);
+                                selectFaculty(context, snapshot.data![2]
+                                    .faculties[index3]);
                               },
                               child: Align(
                                 alignment: AlignmentDirectional(0, 0),
@@ -689,7 +667,7 @@ class _facultyScreenState extends State<facultyScreen> {
                                                       Colors.transparent,
                                                   backgroundImage: NetworkImage(
                                                    
-                                                          snapshot.data![index].faculties[index].ImageUrl),
+                                                          snapshot.data![2].faculties[index3].img_url),
                                                   radius: 45,
                                                 ),
                                               ),
@@ -714,7 +692,7 @@ class _facultyScreenState extends State<facultyScreen> {
                                                                     0, 4, 0, 0),
                                                         child: Text(
                                                           snapshot.hasData
-                                                              ? snapshot.data![index].faculties[index].Title
+                                                              ? snapshot.data![2].faculties[index3].name
                                                               : 'Loading...',
                                                           style: TextStyle(
                                                             fontFamily:
@@ -733,7 +711,9 @@ class _facultyScreenState extends State<facultyScreen> {
                                                                 .fromSTEB(
                                                                     0, 4, 0, 0),
                                                         child: Text(
-                                                          ('Assistant Proffesor'),
+                                                          snapshot.hasData
+                                                              ? snapshot.data![2].faculties[index3].department
+                                                              : 'Loading...',
                                                           style: TextStyle(
                                                             fontFamily:
                                                                 'Lexend Deca',
@@ -752,7 +732,7 @@ class _facultyScreenState extends State<facultyScreen> {
                                                                     0, 4, 0, 0),
                                                         child: Text(
                                                           snapshot.hasData
-                                                              ? snapshot.data![index].faculties[index].sittingP
+                                                              ? snapshot.data![2].faculties[index3].sitting_position
                                                               : 'Loading...',
                                                           style: TextStyle(
                                                             fontFamily:
@@ -821,8 +801,8 @@ class _facultyScreenState extends State<facultyScreen> {
                                                   onPressed: () {
                                                     selectFaculty(
                                                         context,
-                                                        snapshot.data![index]
-                                                            .faculties[index]);
+                                                        snapshot.data![2]
+                                                            .faculties[index3]);
                                                   },
                                                   icon: Icon(
                                                       Icons
@@ -847,13 +827,13 @@ class _facultyScreenState extends State<facultyScreen> {
                     RefreshIndicator(
                       onRefresh: () => futureMenu,
                       child: ListView.builder(
-                        itemCount: snapshot.data!.length,
-                        itemBuilder: (context, index) {
+                        itemCount:snapshot.data![3].faculties.length,
+                        itemBuilder: (context, index4) {
                           return SafeArea(
                             child: GestureDetector(
                               onTap:  () {
-                                selectFaculty(context, snapshot.data![index]
-                                    .faculties[index]);
+                                selectFaculty(context, snapshot.data![3]
+                                    .faculties[index4]);
                               },
                               child: Align(
                                 alignment: AlignmentDirectional(0, 0),
@@ -891,7 +871,7 @@ class _facultyScreenState extends State<facultyScreen> {
                                                   backgroundColor:
                                                       Colors.transparent,
                                                   backgroundImage: NetworkImage(
-                                                     snapshot.data![index].faculties[index].ImageUrl),
+                                                     snapshot.data![3].faculties[index4].img_url),
                                                   radius: 45,
                                                 ),
                                               ),
@@ -916,7 +896,7 @@ class _facultyScreenState extends State<facultyScreen> {
                                                                     0, 4, 0, 0),
                                                         child: Text(
                                                           snapshot.hasData
-                                                              ? snapshot.data![index].faculties[index].Title
+                                                              ? snapshot.data![3].faculties[index4].name
                                                               : 'Loading...',
                                                           style: TextStyle(
                                                             fontFamily:
@@ -935,7 +915,9 @@ class _facultyScreenState extends State<facultyScreen> {
                                                                 .fromSTEB(
                                                                     0, 4, 0, 0),
                                                         child: Text(
-                                                          ('Assistant Proffesor'),
+                                                          snapshot.hasData
+                                                              ? snapshot.data![3].faculties[index4].department
+                                                              : 'Loading...',
                                                           style: TextStyle(
                                                             fontFamily:
                                                                 'Lexend Deca',
@@ -954,7 +936,7 @@ class _facultyScreenState extends State<facultyScreen> {
                                                                     0, 4, 0, 0),
                                                         child: Text(
                                                           snapshot.hasData
-                                                              ? snapshot.data![index].faculties[index].sittingP
+                                                              ? snapshot.data![3].faculties[index4].sitting_position
                                                               : 'Loading...',
                                                           style: TextStyle(
                                                             fontFamily:
@@ -1023,8 +1005,8 @@ class _facultyScreenState extends State<facultyScreen> {
                                                   onPressed: () {
                                                     selectFaculty(
                                                         context,
-                                                        snapshot.data![index]
-                                                            .faculties[index]);
+                                                        snapshot.data![3]
+                                                            .faculties[index4]);
                                                   },
                                                   icon: Icon(
                                                       Icons
