@@ -564,7 +564,7 @@ class CampusScreen extends StatelessWidget {
                       ),
                     ),
                     title: Text(
-                      'Associate Dean - Engeneering',
+                      'Associate Dean - Engineering',
                       style: TextStyle(fontSize: 18),
                     ),
                   ),

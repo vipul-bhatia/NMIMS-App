@@ -173,17 +173,26 @@ class BlogTile extends StatelessWidget {
                       blogUrl: imageUrl,
                     )));
       },
-      child: Container(
-        margin: EdgeInsets.only(bottom: 16),
-        child: Column(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(6),
-              child: Image.network(imageUrl)),
-            Text(title, style: TextStyle(fontSize: 17, color: Colors.black87,fontWeight: FontWeight.w600),),
-            SizedBox(height: 8,),
-            Text(desc, style: TextStyle(color: Colors.black54,),),
-          ],
+      child: Padding(
+        padding: EdgeInsets.all(4),
+        child: Card(
+          borderOnForeground: true,
+          child: Padding(
+            padding: EdgeInsets.all(8),
+            child: Container(
+              margin: EdgeInsets.only(bottom: 16),
+              child: Column(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(6),
+                    child: Image.network(imageUrl)),
+                  Text(title, style: TextStyle(fontSize: 17, color: Colors.black87,fontWeight: FontWeight.w600),),
+                  SizedBox(height: 8,),
+                  Text(desc, style: TextStyle(color: Colors.black54,),),
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );

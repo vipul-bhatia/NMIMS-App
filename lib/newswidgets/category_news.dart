@@ -33,19 +33,18 @@ bool _loading = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Latest'),
-            Text(
-              'News',
-              style: TextStyle(
-                color: Colors.blue,
-              ),
-            )
-          ],
+       appBar:AppBar(
+         iconTheme: IconThemeData(color: Color(0xFF4B39EF)),
+        backgroundColor: Colors.white,
+        title: Text(
+    'Latest News',
+    style: TextStyle(
+          fontFamily: 'Lexend Deca',
+          color: Colors.black,
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
         ),
+  ),
         centerTitle: true,
         elevation: 0.0,
       ),
